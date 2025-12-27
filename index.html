@@ -11,23 +11,10 @@
   <!-- Preload Critical Hero Image - LOCAL WEBP IS BEST FOR LCP -->
   <link rel="preload" as="image" href="/hero-bg-1.webp" fetchpriority="high">
 
-  <!-- Preconnect to Font Servers -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="NetvisionKs | Digital Innovation & Outsourcing" />
-  <meta property="og:description"
-    content="Vi hjälper företag att växa genom strategisk HR, digital marknadsföring och effektiva outsourcing-lösningar." />
-  <meta property="og:image" content="/bujar.webp" />
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:title" content="NetvisionKs | Digital Innovation & Outsourcing" />
-  <meta property="twitter:description"
-    content="Vi hjälper företag att växa genom strategisk HR, digital marknadsföring och effektiva outsourcing-lösningar." />
-  <meta property="twitter:image" content="/bujar.webp" />
+  <!-- Preload Critical Fonts (Local) to prevent blocking -->
+  <link rel="preload" href="/fonts/BodoniModa-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/BodoniModa-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/NunitoSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Critical Inline CSS -->
   <style>
@@ -72,10 +59,19 @@
     }
   </style>
 
-  <!-- Optimized Google Fonts URL - Only loading required weights -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600;6..96,700&family=Nunito+Sans:wght@300;400;600;700&display=swap"
-    rel="stylesheet">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="NetvisionKs | Digital Innovation & Outsourcing" />
+  <meta property="og:description"
+    content="Vi hjälper företag att växa genom strategisk HR, digital marknadsföring och effektiva outsourcing-lösningar." />
+  <meta property="og:image" content="/bujar.webp" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="NetvisionKs | Digital Innovation & Outsourcing" />
+  <meta property="twitter:description"
+    content="Vi hjälper företag att växa genom strategisk HR, digital marknadsföring och effektiva outsourcing-lösningar." />
+  <meta property="twitter:image" content="/bujar.webp" />
 </head>
 
 <body>

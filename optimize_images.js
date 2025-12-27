@@ -10,6 +10,7 @@ async function optimize() {
         { src: 'public/water-overlay-clean.png', dest: 'public/water-overlay-clean.webp', quality: 60 },
         { src: 'public/original-upload.png', dest: 'public/original-upload.webp', width: 1000, quality: 60 },
         { src: 'public/logo-transparent-v5.png', dest: 'public/logo-transparent-v5.webp', quality: 80 },
+        { src: 'public/logo-transparent-v5.png', dest: 'public/logo-small.webp', width: 200, quality: 80 },
         { src: 'public/hero-bg-1.jpg', dest: 'public/hero-bg-1.webp', width: 1200, quality: 70 },
         { src: 'public/hero-bg-2.jpg', dest: 'public/hero-bg-2.webp', width: 1200, quality: 70 },
         { src: 'public/hero-bg-3.jpg', dest: 'public/hero-bg-3.webp', width: 1200, quality: 70 },

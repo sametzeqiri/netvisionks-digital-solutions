@@ -150,6 +150,55 @@ textarea {
     }
 }
 
+@font-face {
+    font-family: 'Bodoni Moda';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/fonts/BodoniModa-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Bodoni Moda';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/BodoniModa-Bold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('/fonts/NunitoSans-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/NunitoSans-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/fonts/NunitoSans-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/NunitoSans-Bold.woff2') format('woff2');
+}
+
+
 /* New Glass Beam Glow Button */
 .btn-primary-glass {
     position: relative;
