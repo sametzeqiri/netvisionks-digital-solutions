@@ -2,13 +2,18 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const VideoBackground = () => {
-    const [isMobile, setIsMobile] = React.useState(false);
+    // Crucial: Initialize with correct value to prevent any flicker or premature video loading
+    const [isMobile, setIsMobile] = React.useState(() => {
+        if (typeof window !== 'undefined') {
+            return window.innerWidth < 768;
+        }
+        return false;
+    });
 
     React.useEffect(() => {
         const checkMobile = () => {
             setIsMobile(window.innerWidth < 768);
         };
-        checkMobile();
         window.addEventListener('resize', checkMobile);
         return () => window.removeEventListener('resize', checkMobile);
     }, []);
@@ -23,6 +28,8 @@ const VideoBackground = () => {
                     playsInline
                     poster="/original-upload.webp"
                     className="w-full h-full object-cover"
+                    // Add title for a11y even if hidden
+                    title="Atmospheric background video"
                 >
                     <source src="/D_Video_UI_Animation_Generated.mp4" type="video/mp4" />
                 </video>

@@ -159,6 +159,7 @@ const Navbar: React.FC = () => {
             <div className={`flex items-center gap-2 font-sans font-bold text-sm ${showSolidNav ? 'text-dark-900' : 'text-white'}`}>
               <button
                 onClick={() => setLanguage('sv')}
+                aria-label="Byt språk till Svenska"
                 className={`transition-all hover:text-primary ${language === 'sv' ? 'text-primary scale-110' : 'opacity-70'}`}
               >
                 SV
@@ -166,6 +167,7 @@ const Navbar: React.FC = () => {
               <span className="opacity-50">|</span>
               <button
                 onClick={() => setLanguage('en')}
+                aria-label="Switch language to English"
                 className={`transition-all hover:text-primary ${language === 'en' ? 'text-primary scale-110' : 'opacity-70'}`}
               >
                 EN
@@ -173,6 +175,7 @@ const Navbar: React.FC = () => {
               <span className="opacity-50">|</span>
               <button
                 onClick={() => setLanguage('sq')}
+                aria-label="Ndërro gjuhën në Shqip"
                 className={`transition-all hover:text-primary ${language === 'sq' ? 'text-primary scale-110' : 'opacity-70'}`}
               >
                 SQ
@@ -187,6 +190,7 @@ const Navbar: React.FC = () => {
           <div className={`flex items-center gap-2 font-sans font-bold text-sm ${showSolidNav ? 'text-dark-900' : 'text-white'}`}>
             <button
               onClick={() => setLanguage('sv')}
+              aria-label="Byt språk till Svenska"
               className={`${language === 'sv' ? 'text-primary' : 'opacity-70'}`}
             >
               SV
@@ -194,6 +198,7 @@ const Navbar: React.FC = () => {
             <span className="opacity-50">|</span>
             <button
               onClick={() => setLanguage('en')}
+              aria-label="Switch language to English"
               className={`${language === 'en' ? 'text-primary' : 'opacity-70'}`}
             >
               EN
@@ -201,6 +206,7 @@ const Navbar: React.FC = () => {
             <span className="opacity-50">|</span>
             <button
               onClick={() => setLanguage('sq')}
+              aria-label="Ndërro gjuhën në Shqip"
               className={`${language === 'sq' ? 'text-primary' : 'opacity-70'}`}
             >
               SQ

@@ -340,7 +340,14 @@ const AIChatWidget: React.FC = () => {
                                         {isListening ? <MicOff size={18} /> : <Mic size={18} />}
                                     </button>
                                 </div>
-                                <button type="submit" disabled={!inputValue.trim()} className="bg-orange-600 text-white p-3 rounded-xl"><Send size={20} /></button>
+                                <button
+                                    type="submit"
+                                    disabled={!inputValue.trim()}
+                                    className="bg-orange-600 text-white p-3 rounded-xl"
+                                    aria-label="Skicka meddelande"
+                                >
+                                    <Send size={20} />
+                                </button>
                             </form>
                         </div>
                     </motion.div>

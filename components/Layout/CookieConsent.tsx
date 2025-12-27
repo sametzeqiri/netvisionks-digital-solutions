@@ -46,7 +46,7 @@ const CookieConsent: React.FC = () => {
                             </div>
                             <div className="flex-1">
                                 <h3 className="text-xl font-bold text-dark-900 font-serif leading-none mb-2">{t('cookies.title')}</h3>
-                                <p className="text-sm text-gray-500 leading-relaxed font-sans">
+                                <p className="text-sm text-gray-700 leading-relaxed font-sans">
                                     {t('cookies.desc')}
                                 </p>
                             </div>
