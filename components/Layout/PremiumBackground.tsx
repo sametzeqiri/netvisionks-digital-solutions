@@ -46,86 +46,91 @@ const VideoBackground = () => {
 };
 
 export const PremiumBackground: React.FC<{ children: React.ReactNode, className?: string }> = ({ children, className = "" }) => {
+    // Only hydrate heavy logic on non-mobile
+    const [isMobile, setIsMobile] = React.useState(true);
+
+    React.useEffect(() => {
+        setIsMobile(window.innerWidth < 768);
+        const handleResize = () => setIsMobile(window.innerWidth < 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return (
         <div className={`relative w-full min-h-screen overflow-x-hidden bg-[#F2F0EF] ${className}`}>
 
             <VideoBackground />
 
-            {/* ======================= SCENE LAYER ======================= */}
-            <div className="fixed inset-0 z-0">
-                <div className="absolute inset-0 overflow-hidden">
-                    {/* Background Gradient/Waves - Restored to original light theme */}
-                    <svg className="absolute top-0 left-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 800">
-                        <path d="M0,0 L1440,0 L1440,800 L0,800 Z" fill="#F2F0EF" />
-                        <defs>
-                            <linearGradient id="swishGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stopColor="#F9F8F7" />
-                                <stop offset="100%" stopColor="#E6E2DF" />
-                            </linearGradient>
-                        </defs>
-                        <rect width="100%" height="100%" fill="url(#swishGrad)" />
-                    </svg>
-                    <svg className="absolute w-full h-full top-[-10%] left-[-10%] opacity-40" viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <path d="M0 0 H 100 V 40 Q 50 100 0 40 Z" fill="#EAE6E3" transform="rotate(-15) scale(1.5)" />
-                    </svg>
-                    <div className="absolute bottom-[-20%] right-[-10%] w-[150%] h-[80%] rounded-[100%] bg-[#E0Dbd7] transform rotate-[-10deg] blur-[80px]" />
+            {/* ======================= SCENE LAYER (Desktop Only) ======================= */}
+            {!isMobile && (
+                <div className="fixed inset-0 z-0">
+                    <div className="absolute inset-0 overflow-hidden">
+                        {/* Background Gradient */}
+                        <svg className="absolute top-0 left-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 800">
+                            <path d="M0,0 L1440,0 L1440,800 L0,800 Z" fill="#F2F0EF" />
+                            <defs>
+                                <linearGradient id="swishGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stopColor="#F9F8F7" />
+                                    <stop offset="100%" stopColor="#E6E2DF" />
+                                </linearGradient>
+                            </defs>
+                            <rect width="100%" height="100%" fill="url(#swishGrad)" />
+                        </svg>
+
+                        <div className="absolute bottom-[-20%] right-[-10%] w-[150%] h-[80%] rounded-[100%] bg-[#E0Dbd7] transform rotate-[-10deg] blur-[80px]" />
+                    </div>
+
+                    {/* Fiery Orange Halo */}
+                    <div
+                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full z-0 opacity-60 blur-[40px]"
+                        style={{
+                            background: 'radial-gradient(circle, #FFB800 0%, #FF4D00 30%, rgba(255, 77, 0, 0) 70%)',
+                            boxShadow: '0 0 100px 30px rgba(255, 77, 0, 0.3)'
+                        }}
+                    />
+
+                    {/* Animated 3D Objects - ONLY DESKTOP */}
+                    <motion.div
+                        className="absolute top-[-5%] right-[-5%] w-[500px] h-[500px] rounded-full z-0"
+                        style={{
+                            background: 'radial-gradient(circle at 30% 30%, #FFB800 0%, #FF4D00 40%, #8B0000 100%)',
+                            boxShadow: 'inset -20px -20px 50px rgba(0,0,0,0.1), 0 0 80px rgba(255, 77, 0, 0.5), inset 0 0 20px rgba(255,255,255,0.5)',
+                            backdropFilter: 'blur(4px)',
+                            border: '1px solid rgba(255, 184, 0, 0.4)'
+                        }}
+                        animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
+                        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                    />
+
+                    <motion.div
+                        className="absolute top-[10%] left-[15%] w-[180px] h-[180px] z-0"
+                        style={{
+                            border: '25px solid rgba(255, 77, 0, 0.6)',
+                            borderRadius: '50%',
+                            boxShadow: 'inset 5px 5px 15px rgba(255,255,255,0.6), 0 0 50px rgba(255, 77, 0, 0.4)',
+                            backdropFilter: 'blur(5px)',
+                        }}
+                        animate={{ y: [0, 30, 0], rotateX: [40, 50, 40], rotateY: [20, 30, 20] }}
+                        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+                    />
+
+                    {/* READING ZONE SPOTLIGHT */}
+                    <div
+                        className="absolute inset-0 pointer-events-none"
+                        style={{
+                            background: 'radial-gradient(circle at center, rgba(255, 184, 0, 0.15) 0%, rgba(242, 240, 239, 0) 70%)',
+                            mixBlendMode: 'multiply'
+                        }}
+                    />
                 </div>
+            )}
 
-                {/* Fiery Orange Halo - Matching the 'Ring' look from the image */}
-                <div
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-full z-0 opacity-60 blur-[40px]"
-                    style={{
-                        background: 'radial-gradient(circle, #FFB800 0%, #FF4D00 30%, rgba(255, 77, 0, 0) 70%)',
-                        boxShadow: '0 0 100px 30px rgba(255, 77, 0, 0.3)'
-                    }}
-                />
-
-                {/* Secondary larger atmospheric glow */}
-                {/* Removed as per instruction */}
-
-                {/* Animated 3D Objects (Fiery Gold Glow - EXACT ORANGE FROM IMAGE) */}
-                <motion.div
-                    className="absolute top-[-5%] right-[-5%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-full z-0"
-                    style={{
-                        background: 'radial-gradient(circle at 30% 30%, #FFB800 0%, #FF4D00 40%, #8B0000 100%)',
-                        boxShadow: 'inset -20px -20px 50px rgba(0,0,0,0.1), 0 0 80px rgba(255, 77, 0, 0.5), inset 0 0 20px rgba(255,255,255,0.5)',
-                        backdropFilter: 'blur(4px)',
-                        border: '1px solid rgba(255, 184, 0, 0.4)'
-                    }}
-                    animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
-                    transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                />
-
-                <motion.div
-                    className="absolute top-[10%] left-[15%] w-[120px] h-[120px] md:w-[180px] md:h-[180px] z-0"
-                    style={{
-                        border: '25px solid rgba(255, 77, 0, 0.6)',
-                        borderRadius: '50%',
-                        boxShadow: 'inset 5px 5px 15px rgba(255,255,255,0.6), 0 0 50px rgba(255, 77, 0, 0.4)',
-                        backdropFilter: 'blur(5px)',
-                    }}
-                    animate={{ y: [0, 30, 0], rotateX: [40, 50, 40], rotateY: [20, 30, 20] }}
-                    transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                />
-                <motion.div
-                    className="absolute top-[40%] left-[5%] w-[60px] h-[60px] md:w-[80px] md:h-[80px] rounded-full z-10"
-                    style={{
-                        background: 'radial-gradient(circle at 35% 35%, rgba(255,255,255,1) 0%, #FF4D00 100%)',
-                        boxShadow: '0 0 40px rgba(255, 77, 0, 0.6)'
-                    }}
-                    animate={{ y: [0, -40, 0] }}
-                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                />
-
-                {/* READING ZONE SPOTLIGHT (SUBTLE WARMTH) */}
-                <div
-                    className="absolute inset-0 pointer-events-none"
-                    style={{
-                        background: 'radial-gradient(circle at center, rgba(255, 184, 0, 0.15) 0%, rgba(242, 240, 239, 0) 70%)',
-                        mixBlendMode: 'multiply'
-                    }}
-                />
-            </div>
+            {/* Simple Mobile Background Layer */}
+            {isMobile && (
+                <div className="fixed inset-0 z-0 bg-[#F2F0EF]">
+                    <div className="absolute top-0 left-0 w-full h-[30%] bg-gradient-to-b from-[#fff5eb] to-transparent opacity-50"></div>
+                </div>
+            )}
 
             {/* ======================= GLASS FOCUS BLUR ======================= */}
             <div className="fixed inset-0 z-10 pointer-events-none md:backdrop-blur-[4px]" />

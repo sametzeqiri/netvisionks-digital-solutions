@@ -70,7 +70,7 @@ const App: React.FC = () => {
                 </Routes>
                 <Footer />
                 <ScrollToTop />
-                <AIChatWidget />
+                <DelayedChat />
                 <CookieConsent />
               </Suspense>
             </div>
@@ -79,6 +79,16 @@ const App: React.FC = () => {
       </Router>
     </LanguageProvider>
   );
+};
+
+// Custom delayed loader for Chat Widget to prevent blocking TBT
+const DelayedChat = () => {
+  const [show, setShow] = React.useState(false);
+  React.useEffect(() => {
+    const t = setTimeout(() => setShow(true), 4000);
+    return () => clearTimeout(t);
+  }, []);
+  return show ? <AIChatWidget /> : null;
 };
 
 export default App;

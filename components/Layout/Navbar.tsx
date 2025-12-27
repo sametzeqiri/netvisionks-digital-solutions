@@ -89,7 +89,7 @@ const Navbar: React.FC = () => {
 
       <nav className={`container mx-auto px-4 lg:px-12 flex justify-between items-center transition-all duration-300 ${scrolled ? 'py-4' : 'py-6'}`}>
         {/* Logo */}
-        <Link to="/" className={`flex items-center gap-3 z-50 transition-all duration-300 ${scrolled ? 'h-12' : 'h-16'}`}>
+        <Link to="/" className={`flex items-center gap-2 md:gap-3 z-50 transition-all duration-300 ${scrolled ? 'h-10 md:h-12' : 'h-12 md:h-16'}`}>
           <img
             src="/logo-small.webp"
             alt="NetvisionKs Logo"
@@ -97,14 +97,14 @@ const Navbar: React.FC = () => {
             height="60"
             className="h-full w-auto object-contain py-1"
           />
-          <div className={`hidden sm:flex items-center tracking-widest font-bold ${scrolled ? 'text-lg md:text-xl' : 'text-xl md:text-2xl'} font-sans`}>
+          <div className={`flex items-center tracking-widest font-bold ${scrolled ? 'text-lg md:text-xl' : 'text-lg md:text-2xl'} font-sans`}>
             <span className="text-gray-800">NETVISION</span>
             <span className="text-[#CC0000]">KS</span>
           </div>
         </Link>
 
-        {/* Desktop Menu - Hidden on Mobile/Tablet (lg breakpoint) */}
-        <div className="hidden lg:flex items-center space-x-8">
+        {/* Desktop Menu - Hidden on Mobile/Tablet/Small Laptop (xl breakpoint) */}
+        <div className="hidden xl:flex items-center space-x-8">
           {navLinks.map((link) => (
             <div key={link.label} className="relative group">
               {link.submenu ? (
@@ -184,8 +184,8 @@ const Navbar: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile Menu Button - Visible on Mobile & Tablet (lg breakpoint) */}
-        <div className="flex items-center gap-4 lg:hidden">
+        {/* Mobile Menu Button - Visible on Mobile & Tablet/Laptop (xl breakpoint) */}
+        <div className="flex items-center gap-4 xl:hidden">
           {/* Mobile Language Switcher */}
           <div className={`flex items-center gap-2 font-sans font-bold text-sm ${showSolidNav ? 'text-dark-900' : 'text-white'}`}>
             <button
@@ -230,7 +230,7 @@ const Navbar: React.FC = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: '100vh' }}
             exit={{ opacity: 0, height: 0 }}
-            className="fixed inset-0 bg-white/95 backdrop-blur-xl z-40 pt-24 px-4 lg:hidden overflow-y-auto"
+            className="fixed inset-0 bg-white/95 backdrop-blur-xl z-40 pt-24 px-4 xl:hidden overflow-y-auto"
           >
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (

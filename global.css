@@ -64,6 +64,8 @@ html {
     scroll-behavior: smooth;
     background-color: #F2F0EF;
     overflow-x: hidden;
+    overscroll-behavior-y: none;
+    /* Prevents "elastic" bounce past footer */
     /* Prevent horizontal scroll */
 }
 

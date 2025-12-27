@@ -80,13 +80,14 @@ const HeroSection: React.FC = () => {
           >
             <img
               src={heroImages[currentImage]}
-              alt=""
-              className="w-full h-full object-cover max-w-[100vw]"
+              alt="Digital Innovation Background"
+              className="w-full h-full object-cover"
               fetchpriority={currentImage === 0 ? "high" : "auto"}
               loading={currentImage === 0 ? "eager" : "lazy"}
               decoding="async"
-              width="1600"
-              height="900"
+              width="1920"
+              height="1080"
+              sizes="100vw"
             />
           </motion.div>
         </AnimatePresence>
