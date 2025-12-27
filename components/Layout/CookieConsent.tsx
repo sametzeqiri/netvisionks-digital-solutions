@@ -61,18 +61,18 @@ const CookieConsent: React.FC = () => {
                             </button>
                             <button
                                 onClick={handleDecline}
-                                className="px-6 py-4 text-gray-400 hover:text-dark-900 text-xs font-bold transition-colors uppercase tracking-widest"
+                                className="px-6 py-4 text-gray-600 hover:text-dark-900 text-xs font-bold transition-colors uppercase tracking-widest"
                             >
                                 {t('cookies.decline')}
                             </button>
                         </div>
 
                         <div className="flex items-center justify-center gap-6 pt-4 border-t border-gray-100">
-                            <a href="#" className="text-[10px] text-gray-400 hover:text-primary transition-colors uppercase tracking-[0.2em] font-bold flex items-center gap-1.5">
+                            <a href="#" className="text-[10px] text-gray-700 hover:text-primary transition-colors uppercase tracking-[0.2em] font-bold flex items-center gap-1.5">
                                 <Shield size={12} /> {t('cookies.policy')}
                             </a>
-                            <span className="text-gray-100 font-light">|</span>
-                            <a href="#" className="text-[10px] text-gray-400 hover:text-primary transition-colors uppercase tracking-[0.2em] font-bold">
+                            <span className="text-gray-300 font-light">|</span>
+                            <a href="#" className="text-[10px] text-gray-700 hover:text-primary transition-colors uppercase tracking-[0.2em] font-bold">
                                 {t('cookies.settings')}
                             </a>
                         </div>

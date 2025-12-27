@@ -8,9 +8,10 @@ const VideoBackground = () => (
             loop
             muted
             playsInline
+            poster="/original-upload.png"
             className="w-full h-full object-cover"
         >
-            <source src="/Futuristic_Liquid_Gradient_Background_Video.mp4" type="video/mp4" />
+            <source src="/D_Video_UI_Animation_Generated.mp4" type="video/mp4" />
         </video>
         {/* Dark overlay to ensure text readability */}
         <div className="absolute inset-0 bg-[#F2F0EF]/80 mix-blend-overlay"></div>

@@ -279,10 +279,20 @@ const AIChatWidget: React.FC = () => {
                                 </div>
                             </div>
                             <div className="flex gap-2">
-                                <button onClick={() => { if (isSpeaking) stopSpeaking(); setIsMuted(!isMuted); }} className="p-1.5 hover:bg-white/10 rounded-lg">
+                                <button
+                                    onClick={() => { if (isSpeaking) stopSpeaking(); setIsMuted(!isMuted); }}
+                                    className="p-1.5 hover:bg-white/10 rounded-lg"
+                                    aria-label={isMuted ? "Slå på ljud" : "Stäng av ljud"}
+                                >
                                     {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
                                 </button>
-                                <button onClick={() => setIsOpen(false)} className="p-1.5 hover:bg-white/10 rounded-lg"><Minimize2 size={18} /></button>
+                                <button
+                                    onClick={() => setIsOpen(false)}
+                                    className="p-1.5 hover:bg-white/10 rounded-lg"
+                                    aria-label="Minimera chatt"
+                                >
+                                    <Minimize2 size={18} />
+                                </button>
                             </div>
                         </div>
 
@@ -321,7 +331,12 @@ const AIChatWidget: React.FC = () => {
                                         placeholder={isListening ? "Lyssnar..." : "Skriv här..."}
                                         className={`w-full bg-gray-100 rounded-xl px-4 py-3 pr-10 text-sm outline-none focus:ring-2 focus:ring-orange-500 ${isListening ? 'ring-2 ring-orange-400' : ''}`}
                                     />
-                                    <button type="button" onClick={toggleListening} className={`absolute right-2 top-1/2 -translate-y-1/2 p-2 ${isListening ? 'text-red-500' : 'text-gray-400'}`}>
+                                    <button
+                                        type="button"
+                                        onClick={toggleListening}
+                                        className={`absolute right-2 top-1/2 -translate-y-1/2 p-2 ${isListening ? 'text-red-500' : 'text-gray-400'}`}
+                                        aria-label={isListening ? "Sluta lyssna" : "Starta röstinmatning"}
+                                    >
                                         {isListening ? <MicOff size={18} /> : <Mic size={18} />}
                                     </button>
                                 </div>
@@ -335,6 +350,7 @@ const AIChatWidget: React.FC = () => {
             <motion.button
                 onClick={() => setIsOpen(!isOpen)}
                 className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-orange-600 to-red-600 text-white p-4 rounded-full shadow-lg"
+                aria-label={isOpen ? "Stäng AI-chatt" : "Öppna AI-chatt"}
             >
                 {isOpen ? <X size={28} /> : <MessageSquare size={28} />}
             </motion.button>

@@ -45,17 +45,21 @@ const Footer: React.FC = () => {
             {t('footer.desc')}
           </p>
           <div className="flex space-x-4">
-            {[Facebook, Twitter, Linkedin, Instagram].map((Icon, idx) => (
-              <motion.a
-                key={idx}
-                href="#"
-                whileHover={{ scale: 1.2, rotate: 5, backgroundColor: "#FFEE00", color: "#111111" }}
-                whileTap={{ scale: 0.9 }}
-                className="w-10 h-10 rounded-full bg-dark-800 flex items-center justify-center transition-all"
-              >
-                <Icon size={18} />
-              </motion.a>
-            ))}
+            {['Facebook', 'Twitter', 'Linkedin', 'Instagram'].map((name, idx) => {
+              const Icon = [Facebook, Twitter, Linkedin, Instagram][idx];
+              return (
+                <motion.a
+                  key={idx}
+                  href="#"
+                  aria-label={name}
+                  whileHover={{ scale: 1.2, rotate: 5, backgroundColor: "#FFEE00", color: "#111111" }}
+                  whileTap={{ scale: 0.9 }}
+                  className="w-10 h-10 rounded-full bg-dark-800 flex items-center justify-center transition-all"
+                >
+                  <Icon size={18} />
+                </motion.a>
+              );
+            })}
           </div>
         </motion.div>
 

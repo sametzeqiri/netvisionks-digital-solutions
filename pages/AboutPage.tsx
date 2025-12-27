@@ -106,8 +106,11 @@ const AboutPage: React.FC = () => {
               className="relative"
             >
               <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=60&w=1200&auto=format&fit=crop"
                 alt="Team collaboration"
+                width="1200"
+                height="800"
+                loading="lazy"
                 className="rounded-lg shadow-2xl relative z-10 border border-white/40 hover:opacity-100 transition-all duration-500"
               />
               <div className="absolute -bottom-6 -left-6 w-full h-full border-4 border-orange-500/30 rounded-lg z-0 hidden md:block"></div>
@@ -234,6 +237,9 @@ const AboutPage: React.FC = () => {
                 <img
                   src="/bujar.jpg"
                   alt="Bujar Gashi"
+                  width="400"
+                  height="500"
+                  loading="lazy"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105 opacity-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-white/10 via-transparent to-transparent opacity-0"></div>
@@ -262,10 +268,13 @@ const AboutPage: React.FC = () => {
                 <img
                   src="/samet.jpg"
                   onError={(e) => {
-                    e.currentTarget.src = "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop";
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=60&w=800&auto=format&fit=crop";
                     e.currentTarget.onerror = null;
                   }}
                   alt="Samet Zeqiri"
+                  width="400"
+                  height="500"
+                  loading="lazy"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105 opacity-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-white/10 via-transparent to-transparent opacity-0"></div>
@@ -320,7 +329,7 @@ const AboutPage: React.FC = () => {
               ].map((member, idx) => (
                 <motion.div key={idx} variants={itemVariants} className="group text-center">
                   <div className="card-liquid-glass p-0 overflow-hidden mb-6 aspect-square relative grayscale group-hover:grayscale-0 transition-all duration-700">
-                    <img src={member.img} alt={member.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <img src={member.img} alt={member.name} width="400" height="400" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                     <div className="absolute inset-0 bg-gradient-to-t from-dark-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </div>
                   <h4 className="text-xl font-serif font-bold text-dark-900 mb-1 group-hover:text-primary transition-colors">{member.name}</h4>

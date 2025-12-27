@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 const heroImages = [
-  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2069",
-  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2070"
+  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=60&w=1600&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=60&w=1600",
+  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=60&w=1600"
 ];
 
 const HeroSection: React.FC = () => {
@@ -69,10 +69,7 @@ const HeroSection: React.FC = () => {
         <AnimatePresence mode="popLayout">
           <motion.div
             key={currentImage}
-            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url("${heroImages[currentImage]}")`,
-            }}
+            className="absolute inset-0 w-full h-full"
             initial={{ opacity: 0, scale: 1.15 }}
             animate={{ opacity: 1, scale: 1.0 }}
             exit={{ opacity: 0 }}
@@ -80,7 +77,17 @@ const HeroSection: React.FC = () => {
               opacity: { duration: 1.5 },
               scale: { duration: 7, ease: "linear" }
             }}
-          />
+          >
+            <img
+              src={heroImages[currentImage]}
+              alt=""
+              className="w-full h-full object-cover"
+              fetchpriority={currentImage === 0 ? "high" : "auto"}
+              loading={currentImage === 0 ? "eager" : "lazy"}
+              width="1600"
+              height="900"
+            />
+          </motion.div>
         </AnimatePresence>
 
         {/* Dark overlay - Adjusted to 50% */}
