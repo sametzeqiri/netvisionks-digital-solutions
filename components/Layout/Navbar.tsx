@@ -97,7 +97,7 @@ const Navbar: React.FC = () => {
             height="60"
             className="h-full w-auto object-contain py-1"
           />
-          <div className={`flex items-center tracking-widest font-bold ${scrolled ? 'text-lg md:text-xl' : 'text-xl md:text-2xl'} font-sans`}>
+          <div className={`hidden sm:flex items-center tracking-widest font-bold ${scrolled ? 'text-lg md:text-xl' : 'text-xl md:text-2xl'} font-sans`}>
             <span className="text-gray-800">NETVISION</span>
             <span className="text-[#CC0000]">KS</span>
           </div>
