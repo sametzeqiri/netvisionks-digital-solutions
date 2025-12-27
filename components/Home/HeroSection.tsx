@@ -112,19 +112,19 @@ const HeroSection: React.FC = () => {
           </div>
 
           <div className="mb-2 overflow-hidden px-2 max-w-[100vw]">
-            <motion.h1 variants={textRevealVariants} className="text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective">
+            <motion.h1 variants={textRevealVariants} className="text-2xl sm:text-4xl md:text-6xl lg:text-8xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective">
               {t('hero.title_1')}
             </motion.h1>
           </div>
 
           <div className="mb-2 overflow-hidden px-2 max-w-[100vw]">
-            <motion.h1 variants={textRevealVariants} className="text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective">
+            <motion.h1 variants={textRevealVariants} className="text-2xl sm:text-4xl md:text-6xl lg:text-8xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective">
               {t('hero.title_2')}
             </motion.h1>
           </div>
 
           <div className="mb-10 overflow-hidden px-2 max-w-[100vw]">
-            <motion.h1 variants={textRevealVariants} className="text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective">
+            <motion.h1 variants={textRevealVariants} className="text-2xl sm:text-4xl md:text-6xl lg:text-8xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective">
               {t('hero.title_3')}
             </motion.h1>
           </div>
