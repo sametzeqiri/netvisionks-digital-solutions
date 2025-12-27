@@ -33,7 +33,7 @@ const AboutPage: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <div className="pt-60 pb-24">
+    <div className="pt-32 md:pt-60 pb-24">
       <SEO
         title={t('seo.about.title')}
         description={t('seo.about.desc')}

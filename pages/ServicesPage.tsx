@@ -36,7 +36,7 @@ const ServicesPage: React.FC = () => {
   const techServices = servicesData.filter(s => techIds.includes(s.id));
 
   return (
-    <div className="pt-60 pb-24 min-h-screen">
+    <div className="pt-32 md:pt-60 pb-24 min-h-screen">
       <SEO
         title={t('seo.services.title')}
         description={t('seo.services.desc')}

@@ -34,7 +34,7 @@ const AboutFeature: React.FC = () => {
 
             <motion.h2
               variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
-              className="text-5xl lg:text-6xl font-serif text-dark-900 mb-8 leading-tight uppercase tracking-widest font-normal"
+              className="text-3xl sm:text-5xl lg:text-6xl font-serif text-dark-900 mb-8 leading-tight uppercase tracking-widest font-normal"
             >
               {t('about_feat.title')} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-dark-900 to-gray-600">
@@ -68,6 +68,9 @@ const AboutFeature: React.FC = () => {
               <img
                 src="/bujar.jpg"
                 alt="Business professional"
+                width="400"
+                height="500"
+                loading="lazy"
                 className="w-full max-w-sm h-auto object-cover rounded shadow-lg grayscale hover:grayscale-0 transition-all duration-500"
               />
             </div>
