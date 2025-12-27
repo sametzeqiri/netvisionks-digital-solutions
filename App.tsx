@@ -2,11 +2,12 @@ import React, { Suspense, lazy } from 'react';
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { LanguageProvider } from './contexts/LanguageContext';
 import Navbar from './components/Layout/Navbar';
-import Footer from './components/Layout/Footer';
-import ScrollToTop from './components/Layout/ScrollToTop';
 import { PremiumBackground } from './components/Layout/PremiumBackground';
-import AIChatWidget from './components/Cards/AIChatWidget';
-import CookieConsent from './components/Layout/CookieConsent';
+// Lazy load non-critical UI components
+const AIChatWidget = lazy(() => import('./components/Cards/AIChatWidget'));
+const CookieConsent = lazy(() => import('./components/Layout/CookieConsent'));
+const Footer = lazy(() => import('./components/Layout/Footer'));
+const ScrollToTop = lazy(() => import('./components/Layout/ScrollToTop'));
 
 // Lazy load pages for better performance
 const Home = lazy(() => import('./pages/Home'));
@@ -67,12 +68,12 @@ const App: React.FC = () => {
                   <Route path="/contact/careers" element={<CareersPage />} />
                   <Route path="/careers/job/:id" element={<JobDetailPage />} />
                 </Routes>
+                <Footer />
+                <ScrollToTop />
+                <AIChatWidget />
+                <CookieConsent />
               </Suspense>
             </div>
-            <Footer />
-            <ScrollToTop />
-            <AIChatWidget />
-            <CookieConsent />
           </div>
         </PremiumBackground>
       </Router>

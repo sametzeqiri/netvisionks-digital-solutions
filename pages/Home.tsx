@@ -44,9 +44,9 @@ const Home: React.FC = () => {
         id="feat.1"
         align="center"
         images={[
-          "https://images.unsplash.com/photo-1512428559087-560fa5ce7d94?q=70&w=1200&fm=webp&fit=crop",
-          "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=70&w=1200&fm=webp&fit=crop",
-          "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=70&w=1200&fm=webp&fit=crop"
+          "/feat-1-2.webp",
+          "/feat-1-3.webp",
+          "/feat-1-2.webp"
         ]}
       />
 
@@ -57,9 +57,9 @@ const Home: React.FC = () => {
         id="feat.2"
         align="left"
         images={[
-          "https://images.unsplash.com/photo-1518770660439-4636190af475?q=70&w=1200&fm=webp&fit=crop",
-          "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=70&w=1200&fm=webp&fit=crop",
-          "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=70&w=1200&fm=webp&fit=crop"
+          "/feat-2-1.webp",
+          "/feat-2-2.webp",
+          "/feat-2-3.webp"
         ]}
       />
 

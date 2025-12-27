@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 const heroImages = [
-  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=70&w=1200&fm=webp&fit=crop",
-  "https://images.unsplash.com/photo-1497366216548-37526070297c?q=70&w=1200&fm=webp&fit=crop",
-  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=70&w=1200&fm=webp&fit=crop"
+  "/hero-bg-1.webp",
+  "/hero-bg-2.webp",
+  "/hero-bg-3.webp"
 ];
 
 const HeroSection: React.FC = () => {
@@ -26,8 +26,8 @@ const HeroSection: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.4, // Slower sequence between lines
-        delayChildren: 0.2
+        staggerChildren: 0.1, // Faster sequence
+        delayChildren: 0.1
       }
     }
   };
@@ -44,8 +44,8 @@ const HeroSection: React.FC = () => {
       opacity: 1,
       filter: "blur(0px)",
       transition: {
-        duration: 1.5,
-        ease: [0.2, 0.65, 0.3, 0.9] // Elegant easing
+        duration: 0.8,
+        ease: [0.2, 0.65, 0.3, 0.9]
       }
     }
   };
@@ -84,6 +84,7 @@ const HeroSection: React.FC = () => {
               className="w-full h-full object-cover"
               fetchpriority={currentImage === 0 ? "high" : "auto"}
               loading={currentImage === 0 ? "eager" : "lazy"}
+              decoding={currentImage === 0 ? "sync" : "async"}
               width="1600"
               height="900"
             />

@@ -106,7 +106,7 @@ const AboutPage: React.FC = () => {
               className="relative"
             >
               <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=60&w=1200&auto=format&fit=crop"
+                src="/about-team.webp"
                 alt="Team collaboration"
                 width="1200"
                 height="800"

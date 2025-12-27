@@ -439,9 +439,11 @@ textarea {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: shimmer 5s linear infinite;
+    animation: shimmer 10s linear infinite;
+    /* Slower for performance */
     filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.4));
     font-weight: 700 !important;
+    will-change: background-position;
 }
 
 /* Page Loader styling */
