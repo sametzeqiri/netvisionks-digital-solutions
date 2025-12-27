@@ -35,9 +35,9 @@ const HeroSection: React.FC = () => {
   // Improved Fade-Blur-Up Effect
   const textRevealVariants: Variants = {
     hidden: {
-      y: 40,
-      opacity: 0,
-      filter: "blur(10px)"
+      y: 0, // No movement from below
+      opacity: 1, // Visible immediately
+      filter: "blur(0px)" // No blur
     },
     visible: {
       y: 0,
@@ -45,7 +45,7 @@ const HeroSection: React.FC = () => {
       filter: "blur(0px)",
       transition: {
         duration: 0.8,
-        ease: [0.2, 0.65, 0.3, 0.9]
+        ease: "easeOut"
       }
     }
   };
