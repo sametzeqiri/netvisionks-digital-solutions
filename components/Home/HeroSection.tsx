@@ -97,60 +97,105 @@ const HeroSection: React.FC = () => {
       </div>
 
       <div className="container mx-auto px-4 lg:px-12 relative z-20 text-center pt-20">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="flex flex-col items-center"
-        >
-          <div className="overflow-hidden mb-6">
-            <motion.span
-              variants={textRevealVariants}
-              className="text-accent font-extrabold tracking-[0.2em] uppercase text-sm md:text-base block font-sans drop-shadow-md"
-            >
+        {/* Mobile: Static Content (Zero TBT) */}
+        <div className="md:hidden flex flex-col items-center">
+          <div className="mb-6">
+            <span className="text-accent font-extrabold tracking-[0.2em] uppercase text-sm block font-sans drop-shadow-md">
               {t('hero.subtitle')}
-            </motion.span>
+            </span>
           </div>
-
-          <div className="mb-2 overflow-hidden px-2 max-w-[100vw]">
-            <motion.h1 variants={textRevealVariants} className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective">
+          <div className="mb-2 px-2">
+            <h1 className="text-2xl sm:text-4xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective">
               {t('hero.title_1')}
-            </motion.h1>
+            </h1>
           </div>
-
-          <div className="mb-2 overflow-hidden px-2 max-w-[100vw]">
-            <motion.h1 variants={textRevealVariants} className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective">
+          <div className="mb-2 px-2">
+            <h1 className="text-2xl sm:text-4xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective">
               {t('hero.title_2')}
-            </motion.h1>
+            </h1>
           </div>
-
-          <div className="mb-10 overflow-hidden px-2 max-w-[100vw]">
-            <motion.h1 variants={textRevealVariants} className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective">
+          <div className="mb-10 px-2">
+            <h1 className="text-2xl sm:text-4xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective">
               {t('hero.title_3')}
-            </motion.h1>
+            </h1>
           </div>
-
-          <motion.div variants={buttonVariants} className="flex flex-col sm:flex-row gap-6 justify-center mt-4">
-            <Link to="/contact">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full sm:w-auto px-10 py-4 btn-primary-glass font-bold rounded text-lg uppercase tracking-wider shadow-xl"
+          <div className="flex flex-col gap-6 justify-center mt-4 w-full">
+            <Link to="/contact" className="w-full">
+              <button
+                className="w-full px-10 py-4 btn-primary-glass font-bold rounded text-lg uppercase tracking-wider shadow-xl"
+                aria-label={t('hero.btn_quote')}
               >
                 {t('hero.btn_quote')}
-              </motion.button>
+              </button>
             </Link>
-            <Link to="/contact">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full sm:w-auto px-10 py-4 btn-transparent-glass font-bold rounded text-lg uppercase tracking-wider shadow-xl"
+            <Link to="/contact" className="w-full">
+              <button
+                className="w-full px-10 py-4 btn-transparent-glass font-bold rounded text-lg uppercase tracking-wider shadow-xl"
+                aria-label={t('hero.btn_contact')}
               >
                 {t('hero.btn_contact')}
-              </motion.button>
+              </button>
             </Link>
+          </div>
+        </div>
+
+        {/* Desktop: Animated Content */}
+        <div className="hidden md:block">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-col items-center"
+          >
+            <div className="overflow-hidden mb-6">
+              <motion.span
+                variants={textRevealVariants}
+                className="text-accent font-extrabold tracking-[0.2em] uppercase text-base block font-sans drop-shadow-md"
+              >
+                {t('hero.subtitle')}
+              </motion.span>
+            </div>
+
+            <div className="mb-2 overflow-hidden px-2 max-w-[100vw]">
+              <motion.h1 variants={textRevealVariants} className="text-5xl lg:text-7xl xl:text-8xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective">
+                {t('hero.title_1')}
+              </motion.h1>
+            </div>
+
+            <div className="mb-2 overflow-hidden px-2 max-w-[100vw]">
+              <motion.h1 variants={textRevealVariants} className="text-5xl lg:text-7xl xl:text-8xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective">
+                {t('hero.title_2')}
+              </motion.h1>
+            </div>
+
+            <div className="mb-10 overflow-hidden px-2 max-w-[100vw]">
+              <motion.h1 variants={textRevealVariants} className="text-5xl lg:text-7xl xl:text-8xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective">
+                {t('hero.title_3')}
+              </motion.h1>
+            </div>
+
+            <motion.div variants={buttonVariants} className="flex flex-row gap-6 justify-center mt-4">
+              <Link to="/contact">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-10 py-4 btn-primary-glass font-bold rounded text-lg uppercase tracking-wider shadow-xl"
+                >
+                  {t('hero.btn_quote')}
+                </motion.button>
+              </Link>
+              <Link to="/contact">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-10 py-4 btn-transparent-glass font-bold rounded text-lg uppercase tracking-wider shadow-xl"
+                >
+                  {t('hero.btn_contact')}
+                </motion.button>
+              </Link>
+            </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
