@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 const heroImages = [
-  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=60&w=1600&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=60&w=1600",
-  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=60&w=1600"
+  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=70&w=1200&fm=webp&fit=crop",
+  "https://images.unsplash.com/photo-1497366216548-37526070297c?q=70&w=1200&fm=webp&fit=crop",
+  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=70&w=1200&fm=webp&fit=crop"
 ];
 
 const HeroSection: React.FC = () => {

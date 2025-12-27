@@ -8,7 +8,7 @@ const VideoBackground = () => (
             loop
             muted
             playsInline
-            poster="/original-upload.png"
+            poster="/original-upload.webp"
             className="w-full h-full object-cover"
         >
             <source src="/D_Video_UI_Animation_Generated.mp4" type="video/mp4" />
@@ -107,7 +107,7 @@ export const PremiumBackground: React.FC<{ children: React.ReactNode, className?
             <div
                 className="fixed inset-0 z-20 pointer-events-none opacity-[0.1] mix-blend-hard-light"
                 style={{
-                    backgroundImage: "url('/water-overlay-clean.png')",
+                    backgroundImage: "url('/water-overlay-clean.webp')",
                     backgroundSize: '50%',
                     backgroundPosition: 'top left',
                     backgroundRepeat: 'repeat',

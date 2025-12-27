@@ -235,7 +235,7 @@ const AboutPage: React.FC = () => {
             >
               <div className="relative overflow-hidden rounded-lg mb-6 aspect-[4/5] bg-gray-200 shadow-md">
                 <img
-                  src="/bujar.jpg"
+                  src="/bujar.webp"
                   alt="Bujar Gashi"
                   width="400"
                   height="500"
@@ -266,9 +266,9 @@ const AboutPage: React.FC = () => {
             >
               <div className="relative overflow-hidden rounded-lg mb-6 aspect-[4/5] bg-gray-200 shadow-md">
                 <img
-                  src="/samet.jpg"
+                  src="/samet.webp"
                   onError={(e) => {
-                    e.currentTarget.src = "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=60&w=800&auto=format&fit=crop";
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=60&w=800&fm=webp&fit=crop";
                     e.currentTarget.onerror = null;
                   }}
                   alt="Samet Zeqiri"

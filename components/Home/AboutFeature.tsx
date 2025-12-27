@@ -66,7 +66,7 @@ const AboutFeature: React.FC = () => {
           >
             <div className="relative">
               <img
-                src="/bujar.jpg"
+                src="/bujar.webp"
                 alt="Business professional"
                 width="400"
                 height="500"
