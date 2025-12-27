@@ -26,12 +26,12 @@ const ProjectsSection: React.FC = () => {
   const { t } = useLanguage();
 
   const projects = [
-    { id: 1, title: t('projects.p1'), img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop&fm=webp', cat: 'Digital', url: '#' },
-    { id: 2, title: t('projects.p2'), img: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=800&auto=format&fit=crop&fm=webp', cat: 'Branding', url: '#' },
-    { id: 5, title: t('projects.p5'), img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200&auto=format&fit=crop&fm=webp', cat: 'Cleaning Tech', url: 'https://www.heltrent.no/' }, // Stable cleaning image
-    { id: 6, title: 'GEO Performance', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop&fm=webp', cat: 'AI Optimization', url: '#' },
-    { id: 3, title: t('projects.p3'), img: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop&fm=webp', cat: 'Development', url: '#' },
-    { id: 4, title: t('projects.p4'), img: 'https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800&auto=format&fit=crop&fm=webp', cat: 'Marketing', url: '#' },
+    { id: 1, title: t('projects.p1'), img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=60&w=800&fm=webp&fit=crop', cat: 'Digital', url: '#' },
+    { id: 2, title: t('projects.p2'), img: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=60&w=800&fm=webp&fit=crop', cat: 'Branding', url: '#' },
+    { id: 5, title: t('projects.p5'), img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=60&w=800&fm=webp&fit=crop', cat: 'Cleaning Tech', url: 'https://www.heltrent.no/' }, // Stable cleaning image
+    { id: 6, title: 'GEO Performance', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=60&w=800&fm=webp&fit=crop', cat: 'AI Optimization', url: '#' },
+    { id: 3, title: t('projects.p3'), img: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=60&w=800&fm=webp&fit=crop', cat: 'Development', url: '#' },
+    { id: 4, title: t('projects.p4'), img: 'https://images.unsplash.com/photo-1551434678-e076c223a692?q=60&w=800&fm=webp&fit=crop', cat: 'Marketing', url: '#' },
   ];
 
   return (
