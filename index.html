@@ -135,18 +135,14 @@
   <meta property="twitter:description"
     content="Vi hjälper företag att växa genom strategisk HR, digital marknadsföring och effektiva outsourcing-lösningar." />
   <meta property="twitter:image" content="/bujar.webp" />
+  <link rel="preconnect" href="https://images.unsplash.com">
 </head>
 
 <body>
-  <div id="app-shell-hero"
-    style="position:fixed; top:0; left:0; width:100%; height:100vh; z-index:-1; overflow:hidden; background-color:#111;">
-    <!-- Critical LCP Image in Raw HTML - Forced Mobile Source -->
-    <picture>
-      <source media="(max-width: 768px)" srcset="/hero-bg-1-mobile.jpg">
-      <source media="(min-width: 769px)" srcset="/hero-bg-1.webp">
-      <img src="/hero-bg-1.webp" alt="Digital Innovation & Outsourcing" width="1920" height="1080"
-        style="width:100%; height:100%; object-fit:cover;" fetchpriority="high" loading="eager" decoding="async">
-    </picture>
+  <div id="app-shell-hero">
+    <!-- Simplified LCP Image - High Priority -->
+    <img src="/hero-bg-1-mobile.jpg" alt="NetvisionKs" class="hero-img-lcp" fetchpriority="high" loading="eager"
+      decoding="async">
     <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);"></div>
   </div>
 

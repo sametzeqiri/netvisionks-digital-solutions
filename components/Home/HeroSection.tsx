@@ -78,11 +78,11 @@ const HeroSection: React.FC = () => {
         className="absolute inset-0 z-0 bg-dark-900"
         style={{ clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 100px), 0 100%)' }}
       >
-        <AnimatePresence mode="popLayout">
+        <AnimatePresence mode="popLayout" initial={false}>
           <motion.div
             key={currentImage}
             className="absolute inset-0 w-full h-full"
-            initial={{ opacity: 0, scale: 1.15 }}
+            initial={currentImage === 0 ? { opacity: 1, scale: 1.0 } : { opacity: 0, scale: 1.15 }}
             animate={{ opacity: 1, scale: 1.0 }}
             exit={{ opacity: 0 }}
             transition={{
