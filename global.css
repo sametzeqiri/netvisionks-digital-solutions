@@ -63,6 +63,13 @@ p {
 html {
     scroll-behavior: smooth;
     background-color: #F2F0EF;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
+}
+
+body {
+    overflow-x: hidden;
+    /* Double safety */
 }
 
 /* Clearer Text Global Enhancement */
@@ -444,7 +451,6 @@ textarea {
     /* Slower for performance */
     filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.4));
     font-weight: 700 !important;
-    will-change: background-position;
 }
 
 /* Page Loader styling */

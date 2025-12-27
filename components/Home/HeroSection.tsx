@@ -81,10 +81,10 @@ const HeroSection: React.FC = () => {
             <img
               src={heroImages[currentImage]}
               alt=""
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover max-w-[100vw]"
               fetchpriority={currentImage === 0 ? "high" : "auto"}
               loading={currentImage === 0 ? "eager" : "lazy"}
-              decoding={currentImage === 0 ? "sync" : "async"}
+              decoding="async"
               width="1600"
               height="900"
             />
@@ -111,20 +111,20 @@ const HeroSection: React.FC = () => {
             </motion.span>
           </div>
 
-          <div className="mb-2 overflow-hidden px-2">
-            <motion.h1 variants={textRevealVariants} className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective">
+          <div className="mb-2 overflow-hidden px-2 max-w-[100vw]">
+            <motion.h1 variants={textRevealVariants} className="text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective">
               {t('hero.title_1')}
             </motion.h1>
           </div>
 
-          <div className="mb-2 overflow-hidden px-2">
-            <motion.h1 variants={textRevealVariants} className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective">
+          <div className="mb-2 overflow-hidden px-2 max-w-[100vw]">
+            <motion.h1 variants={textRevealVariants} className="text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective">
               {t('hero.title_2')}
             </motion.h1>
           </div>
 
-          <div className="mb-10 overflow-hidden px-2">
-            <motion.h1 variants={textRevealVariants} className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective">
+          <div className="mb-10 overflow-hidden px-2 max-w-[100vw]">
+            <motion.h1 variants={textRevealVariants} className="text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective">
               {t('hero.title_3')}
             </motion.h1>
           </div>
