@@ -73,7 +73,7 @@ const Navbar: React.FC = () => {
       : 'bg-transparent'
       }`}>
       {/* Top Bar - Orange Background matching image */}
-      <div className={`hidden md:block overflow-hidden transition-all duration-300 h-10 opacity-100 py-2 bg-primary text-white text-sm font-medium`}>
+      <div className={`hidden lg:block overflow-hidden transition-all duration-300 h-10 opacity-100 py-2 bg-primary text-white text-sm font-medium`}>
         <div className="container mx-auto px-4 lg:px-12 flex justify-between items-center h-full font-sans">
           <div className="flex items-center space-x-6">
             <span className="flex items-center gap-2"><MapPin size={14} className="text-white" /> Sveavägen 1, Stockholm</span>
@@ -103,8 +103,8 @@ const Navbar: React.FC = () => {
           </div>
         </Link>
 
-        {/* Desktop Menu - Hidden on Mobile (md breakpoint) - Optimized gap for tablet */}
-        <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
+        {/* Desktop Menu - Hidden on Mobile/Tablet (lg breakpoint) */}
+        <div className="hidden lg:flex items-center space-x-8">
           {navLinks.map((link) => (
             <div key={link.label} className="relative group">
               {link.submenu ? (
@@ -184,8 +184,8 @@ const Navbar: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile Menu Button - Visible on Mobile (md breakpoint) */}
-        <div className="flex items-center gap-4 md:hidden">
+        {/* Mobile Menu Button - Visible on Mobile & Tablet (lg breakpoint) */}
+        <div className="flex items-center gap-4 lg:hidden">
           {/* Mobile Language Switcher */}
           <div className={`flex items-center gap-2 font-sans font-bold text-sm ${showSolidNav ? 'text-dark-900' : 'text-white'}`}>
             <button
@@ -230,7 +230,7 @@ const Navbar: React.FC = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: '100vh' }}
             exit={{ opacity: 0, height: 0 }}
-            className="fixed inset-0 bg-white/95 backdrop-blur-xl z-40 pt-24 px-4 md:hidden overflow-y-auto"
+            className="fixed inset-0 bg-white/95 backdrop-blur-xl z-40 pt-24 px-4 lg:hidden overflow-y-auto"
           >
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
