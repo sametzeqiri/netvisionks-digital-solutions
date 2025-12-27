@@ -17,11 +17,36 @@
   <link rel="preload" href="/fonts/BodoniModa-Bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/NunitoSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
 
-  <!-- Critical Inline CSS -->
+  <!-- Critical Inline CSS (Performance Optimization) -->
   <style>
+    @font-face {
+      font-family: 'Bodoni Moda';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url('/fonts/BodoniModa-SemiBold.woff2') format('woff2');
+    }
+
+    @font-face {
+      font-family: 'Bodoni Moda';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url('/fonts/BodoniModa-Bold.woff2') format('woff2');
+    }
+
+    @font-face {
+      font-family: 'Nunito Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('/fonts/NunitoSans-Regular.woff2') format('woff2');
+    }
+
     :root {
       --primary: #FF6600;
       --bg: #F2F0EF;
+      --dark: #111111;
     }
 
     body {
@@ -29,15 +54,47 @@
       margin: 0;
       font-family: 'Nunito Sans', sans-serif;
       overflow-x: hidden;
+      color: var(--dark);
     }
 
+    /* Fixed Header Background for FCP */
+    header {
+      background: rgba(18, 18, 18, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    /* Critical Hero Shell (Visible during load) */
+    #app-shell-hero {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: -1;
+      overflow: hidden;
+      background-color: #000;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    /* Page Loader - Transparent bg to allow LCP image detection */
     .page-loader {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       width: 100%;
-      background-color: var(--bg);
+      background-color: transparent;
+      position: relative;
+      z-index: 100;
     }
 
     @keyframes rotate {
@@ -58,7 +115,17 @@
       border-radius: 50%;
       animation: rotate 1s linear infinite;
     }
+
+    * {
+      font-display: swap;
+    }
   </style>
+
+  <!-- Defer Non-Critical CSS (Vite will inject the main CSS, but we can pre-optimize common styles) -->
+  <link rel="preload" href="/fonts_css.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="/fonts_css.css">
+  </noscript>
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />

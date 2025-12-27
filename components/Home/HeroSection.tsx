@@ -4,9 +4,21 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 const heroImages = [
-  "/hero-bg-1.webp",
-  "/hero-bg-2.webp",
-  "/hero-bg-3.webp"
+  {
+    mobile: "/hero-bg-1-mobile.jpg",
+    desktop: "/hero-bg-1.webp",
+    alt: "Företagsutveckling och strategi"
+  },
+  {
+    mobile: "/hero-bg-2.webp", // Fallback to webp as no specific mobile crop exists yet
+    desktop: "/hero-bg-2.webp",
+    alt: "Digital transformation"
+  },
+  {
+    mobile: "/hero-bg-3.webp", // Fallback to webp
+    desktop: "/hero-bg-3.webp",
+    alt: "Kreativa tekniska lösningar"
+  }
 ];
 
 const HeroSection: React.FC = () => {
@@ -78,17 +90,20 @@ const HeroSection: React.FC = () => {
               scale: { duration: 7, ease: "linear" }
             }}
           >
-            <img
-              src={heroImages[currentImage]}
-              alt="Digital Innovation Background"
-              className="w-full h-full object-cover"
-              fetchpriority={currentImage === 0 ? "high" : "auto"}
-              loading={currentImage === 0 ? "eager" : "lazy"}
-              decoding="async"
-              width="1920"
-              height="1080"
-              sizes="100vw"
-            />
+            <picture>
+              <source media="(max-width: 768px)" srcSet={heroImages[currentImage].mobile} />
+              <source media="(min-width: 769px)" srcSet={heroImages[currentImage].desktop} />
+              <img
+                src={heroImages[currentImage].desktop}
+                alt={heroImages[currentImage].alt}
+                className="w-full h-full object-cover"
+                fetchPriority={currentImage === 0 ? "high" : "auto"}
+                loading={currentImage === 0 ? "eager" : "lazy"}
+                decoding="async"
+                width="1920"
+                height="1080"
+              />
+            </picture>
           </motion.div>
         </AnimatePresence>
 
@@ -106,32 +121,32 @@ const HeroSection: React.FC = () => {
           </div>
           <div className="mb-2 px-2">
             <h1
-              className="text-2xl sm:text-4xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective"
-              style={{ textShadow: "0px 2px 4px rgba(0,0,0,0.5)" }}
+              className="text-3xl sm:text-4xl font-serif leading-tight uppercase tracking-widest font-bold text-white"
+              style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.8)" }}
             >
               {t('hero.title_1')}
             </h1>
           </div>
           <div className="mb-2 px-2">
             <h1
-              className="text-2xl sm:text-4xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective"
-              style={{ textShadow: "0px 2px 4px rgba(0,0,0,0.5)" }}
+              className="text-3xl sm:text-4xl font-serif leading-tight uppercase tracking-widest font-bold text-white"
+              style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.8)" }}
             >
               {t('hero.title_2')}
             </h1>
           </div>
           <div className="mb-10 px-2">
             <h1
-              className="text-2xl sm:text-4xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective"
-              style={{ textShadow: "0px 2px 4px rgba(0,0,0,0.5)" }}
+              className="text-3xl sm:text-4xl font-serif leading-tight uppercase tracking-widest font-bold text-white"
+              style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.8)" }}
             >
               {t('hero.title_3')}
             </h1>
           </div>
-          <div className="flex flex-col gap-6 justify-center mt-4 w-full">
+          <div className="flex flex-col gap-6 justify-center mt-4 w-full px-4">
             <Link to="/contact" className="w-full">
               <button
-                className="w-full px-10 py-4 btn-primary-glass font-bold rounded text-lg uppercase tracking-wider shadow-xl"
+                className="w-full px-10 py-4 bg-primary text-white font-bold rounded text-lg uppercase tracking-wider shadow-xl border border-primary/20"
                 aria-label={t('hero.btn_quote')}
               >
                 {t('hero.btn_quote')}
@@ -139,7 +154,7 @@ const HeroSection: React.FC = () => {
             </Link>
             <Link to="/contact" className="w-full">
               <button
-                className="w-full px-10 py-4 btn-transparent-glass font-bold rounded text-lg uppercase tracking-wider shadow-xl"
+                className="w-full px-10 py-4 bg-white/10 backdrop-blur-sm text-white font-bold rounded text-lg uppercase tracking-wider shadow-xl border border-white/40"
                 aria-label={t('hero.btn_contact')}
               >
                 {t('hero.btn_contact')}
