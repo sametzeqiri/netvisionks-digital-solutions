@@ -105,17 +105,26 @@ const HeroSection: React.FC = () => {
             </span>
           </div>
           <div className="mb-2 px-2">
-            <h1 className="text-2xl sm:text-4xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective">
+            <h1
+              className="text-2xl sm:text-4xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective"
+              style={{ textShadow: "0px 2px 4px rgba(0,0,0,0.5)" }}
+            >
               {t('hero.title_1')}
             </h1>
           </div>
           <div className="mb-2 px-2">
-            <h1 className="text-2xl sm:text-4xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective">
+            <h1
+              className="text-2xl sm:text-4xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective"
+              style={{ textShadow: "0px 2px 4px rgba(0,0,0,0.5)" }}
+            >
               {t('hero.title_2')}
             </h1>
           </div>
           <div className="mb-10 px-2">
-            <h1 className="text-2xl sm:text-4xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective">
+            <h1
+              className="text-2xl sm:text-4xl font-serif leading-tight uppercase tracking-widest font-normal text-reflective"
+              style={{ textShadow: "0px 2px 4px rgba(0,0,0,0.5)" }}
+            >
               {t('hero.title_3')}
             </h1>
           </div>
