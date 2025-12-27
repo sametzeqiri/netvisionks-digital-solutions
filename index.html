@@ -8,9 +8,9 @@
   <meta name="description"
     content="NetvisionKs erbjuder skräddarsydd webbutveckling, apputveckling och strategisk HR-outsourcing. Vi kopplar nordiska företag med topptalanger från Kosovo." />
 
-  <!-- Preload Critical Hero Image - Responsive LCP -->
-  <link rel="preload" as="image" href="/hero-bg-1.webp" imagesrcset="/hero-bg-1-mobile.jpg 640w, /hero-bg-1.webp 1920w"
-    imagesizes="100vw" fetchpriority="high">
+  <!-- Preload Critical Hero Image - Responsive LCP (Strict Media Queries) -->
+  <link rel="preload" as="image" href="/hero-bg-1-mobile.jpg" media="(max-width: 768px)" fetchpriority="high">
+  <link rel="preload" as="image" href="/hero-bg-1.webp" media="(min-width: 769px)" fetchpriority="high">
 
   <!-- Preload Critical Fonts (Local) to prevent blocking -->
   <link rel="preload" href="/fonts/BodoniModa-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
@@ -78,9 +78,13 @@
 <body>
   <div id="app-shell-hero"
     style="position:fixed; top:0; left:0; width:100%; height:100vh; z-index:-1; overflow:hidden; background-color:#111;">
-    <!-- Critical LCP Image in Raw HTML -->
-    <img src="/hero-bg-1.webp" srcset="/hero-bg-1-mobile.jpg 640w, /hero-bg-1.webp 1920w" sizes="100vw" alt="Background"
-      style="width:100%; height:100%; object-fit:cover;">
+    <!-- Critical LCP Image in Raw HTML - Forced Mobile Source -->
+    <picture>
+      <source media="(max-width: 768px)" srcset="/hero-bg-1-mobile.jpg">
+      <source media="(min-width: 769px)" srcset="/hero-bg-1.webp">
+      <img src="/hero-bg-1.webp" alt="Background" style="width:100%; height:100%; object-fit:cover;"
+        fetchpriority="high" decoding="async">
+    </picture>
     <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);"></div>
   </div>
 
