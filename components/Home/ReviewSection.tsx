@@ -157,7 +157,7 @@ const ReviewSection: React.FC = () => {
                                     className="space-y-6 relative z-10"
                                 >
                                     <div className="flex flex-col gap-3">
-                                        <label className="text-xs font-bold text-gray-400 uppercase tracking-[0.2em]">{t('reviews.label_rating')}</label>
+                                        <label className="text-xs font-bold text-gray-600 uppercase tracking-[0.2em]">{t('reviews.label_rating')}</label>
                                         <div className="flex gap-3">
                                             {[...Array(5)].map((_, i) => {
                                                 const starValue = i + 1;
@@ -165,6 +165,7 @@ const ReviewSection: React.FC = () => {
                                                     <button
                                                         type="button"
                                                         key={i}
+                                                        aria-label={`${t('reviews.label_rating')}: ${starValue} / 5`}
                                                         className="transition-all transform hover:scale-110 focus:outline-none"
                                                         onClick={() => setRating(starValue)}
                                                         onMouseEnter={() => setHover(starValue)}
@@ -184,7 +185,7 @@ const ReviewSection: React.FC = () => {
                                     </div>
 
                                     <div className="flex flex-col gap-2">
-                                        <label className="text-xs font-bold text-gray-400 uppercase tracking-[0.2em]">{t('reviews.label_name')}</label>
+                                        <label className="text-xs font-bold text-gray-600 uppercase tracking-[0.2em]">{t('reviews.label_name')}</label>
                                         <input
                                             type="text"
                                             required
@@ -196,7 +197,7 @@ const ReviewSection: React.FC = () => {
                                     </div>
 
                                     <div className="flex flex-col gap-2">
-                                        <label className="text-xs font-bold text-gray-400 uppercase tracking-[0.2em]">{t('reviews.label_comment')}</label>
+                                        <label className="text-xs font-bold text-gray-600 uppercase tracking-[0.2em]">{t('reviews.label_comment')}</label>
                                         <textarea
                                             required
                                             rows={4}

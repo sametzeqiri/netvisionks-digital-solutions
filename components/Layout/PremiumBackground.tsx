@@ -1,22 +1,42 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const VideoBackground = () => (
-    <div className="fixed inset-0 z-[-1] overflow-hidden opacity-30">
-        <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            poster="/original-upload.webp"
-            className="w-full h-full object-cover"
-        >
-            <source src="/D_Video_UI_Animation_Generated.mp4" type="video/mp4" />
-        </video>
-        {/* Dark overlay to ensure text readability */}
-        <div className="absolute inset-0 bg-[#F2F0EF]/80 mix-blend-overlay"></div>
-    </div>
-);
+const VideoBackground = () => {
+    const [isMobile, setIsMobile] = React.useState(false);
+
+    React.useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    return (
+        <div className="fixed inset-0 z-[-1] overflow-hidden opacity-30" aria-hidden="true">
+            {!isMobile ? (
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    poster="/original-upload.webp"
+                    className="w-full h-full object-cover"
+                >
+                    <source src="/D_Video_UI_Animation_Generated.mp4" type="video/mp4" />
+                </video>
+            ) : (
+                <div
+                    className="w-full h-full bg-cover bg-center"
+                    style={{ backgroundImage: "url('/original-upload.webp')" }}
+                />
+            )}
+            {/* Dark overlay to ensure text readability */}
+            <div className="absolute inset-0 bg-[#F2F0EF]/80 mix-blend-overlay"></div>
+        </div>
+    );
+};
 
 export const PremiumBackground: React.FC<{ children: React.ReactNode, className?: string }> = ({ children, className = "" }) => {
     return (

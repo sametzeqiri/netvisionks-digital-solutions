@@ -91,7 +91,7 @@ const Navbar: React.FC = () => {
         {/* Logo */}
         <Link to="/" className={`flex items-center gap-3 z-50 transition-all duration-300 ${scrolled ? 'h-12' : 'h-16'}`}>
           <img
-            src="/logo-transparent-v5.png"
+            src="/logo-transparent-v5.webp"
             alt="NetvisionKs Logo"
             width="180"
             height="60"

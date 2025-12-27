@@ -22,7 +22,7 @@ const Home: React.FC = () => {
           "@type": "Organization",
           "name": "NetvisionKs",
           "url": "https://netvisionks.com",
-          "logo": "https://netvisionks.com/logo-transparent-v5.png",
+          "logo": "https://netvisionks.com/logo-transparent-v5.webp",
           "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+46-8-123-45-67",

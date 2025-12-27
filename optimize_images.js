@@ -46,6 +46,16 @@ async function optimize() {
     } catch (e) {
         console.error('Failed to optimize original-upload.png', e);
     }
+
+    // Optimize logo-transparent-v5.png
+    try {
+        await sharp('public/logo-transparent-v5.png')
+            .webp({ quality: 80 })
+            .toFile('public/logo-transparent-v5.webp');
+        console.log('Optimized logo-transparent-v5.webp created');
+    } catch (e) {
+        console.error('Failed to optimize logo-transparent-v5.png', e);
+    }
 }
 
 optimize();
