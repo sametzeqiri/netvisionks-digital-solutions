@@ -140,7 +140,7 @@ export const PremiumBackground: React.FC<{ children: React.ReactNode, className?
                 }}
             />
 
-            <div className="relative z-50">
+            <div className="relative z-50 flex flex-col min-h-[100dvh]">
                 {children}
             </div>
         </div>
