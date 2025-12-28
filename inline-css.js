@@ -36,8 +36,11 @@ async function inlineCss() {
             // Create style tag
             const styleTag = `<style>${cssContent}</style>`;
 
-            // Replace the link tag with the style tag
-            html = html.replace(match[0], styleTag);
+            // LCP Preload for Mobile Hero
+            const preloadTag = `<link rel="preload" as="image" href="/hero-bg-1-mobile.webp" type="image/webp" media="(max-width: 768px)">`;
+
+            // Replace link with style tag and prepend preload
+            html = html.replace(match[0], preloadTag + styleTag);
 
             // Write back to index.html
             fs.writeFileSync(HTML_PATH, html);
