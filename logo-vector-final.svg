@@ -1,0 +1,80 @@
+<svg width="600" height="120" viewBox="0 0 600 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Silver Gradient for main face -->
+    <linearGradient id="silverFace" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="40%" stop-color="#E0E0E0"/>
+      <stop offset="100%" stop-color="#B0B0B0"/>
+    </linearGradient>
+    
+    <!-- Darker Silver for bevels/sides -->
+    <linearGradient id="silverDark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A0A0A0"/>
+      <stop offset="100%" stop-color="#707070"/>
+    </linearGradient>
+
+    <!-- Red Gradient -->
+    <linearGradient id="redFace" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E00000"/>
+      <stop offset="100%" stop-color="#B30000"/>
+    </linearGradient>
+    
+    <!-- Shadow -->
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+        <feOffset dx="2" dy="2"/>
+        <feComponentTransfer><feFuncA type="linear" slope="0.3"/></feComponentTransfer>
+        <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Group Logo Icon -->
+  <g transform="translate(10, 10)">
+      <!-- RED PARTS (Background) -->
+      <!-- Vertical Red Bar -->
+      <!-- Position: X=50, Width=25, Height=80. Sits behind Silver Diagonal -->
+      <path d="M50 20 H75 V95 H50 V20 Z" fill="url(#redFace)"/>
+      
+      <!-- Red Top Arm -->
+      <!-- Starts from Red Vertical (approx x=75, y=50) goes up-right -->
+      <path d="M75 50 L125 10 H155 L100 65 Z" fill="url(#redFace)"/>
+
+      <!-- SILVER PARTS (Foreground) -->
+      <!-- Left Vertical Bar -->
+      <!-- Top flat, Bottom cut angled (Bottom-Left to Upper-Right) -->
+      <path d="M10 10 H35 L35 70 L10 95 V10 Z" fill="url(#silverFace)" filter="url(#softShadow)" stroke="#909090" stroke-width="0.5"/>
+      
+      <!-- Silver Diagonal Leg -->
+      <!-- Starts from top of Left Bar (approx x=25-35, y=10) -->
+      <!-- Goes down to bottom right over the red bar -->
+      <!-- Ends angled parellel to the red arm or red vertical? Usually flat bottom or angled. -->
+      <!-- Reference shows the silver leg ends with a cut parallel to the left leg's cut? Or flat? -->
+      <!-- Based on "checkerboard" image: The silver diagonal ends at bottom right with a horizontal cut. -->
+      <!-- Let's try matching the reference overlap exactly. -->
+      
+      <path d="
+        M35 30 
+        L105 95 
+        H155 
+        L35 10 
+        Z" 
+        fill="url(#silverFace)" 
+        filter="url(#softShadow)" 
+        stroke="#909090" 
+        stroke-width="0.5"
+      />
+      
+      <!-- Refiling the silver shape to look like a connected N -->
+      <!-- The diagonal connects to the top-right of the left bar -->
+      <!-- Wait, standard N construction: -->
+      <!-- Left Bar: (10,10) to (35,10) to (35,something) ... -->
+      <!-- Diagonal: joins at (35,10) -->
+      <!-- Let's draw them as a unified path if possible, or carefully overlapped -->
+      <path d="M34 11 L135 95 H100 L20 25 Z" fill="url(#silverFace)" />
+      
+  </g>
+
+  <!-- TEXT -->
+  <text x="180" y="80" font-family="'Arial', sans-serif" font-weight="bold" font-size="52" letter-spacing="2" fill="#A0A0A0">NETVISION</text>
+  <text x="510" y="80" font-family="'Arial', sans-serif" font-weight="bold" font-size="52" letter-spacing="2" fill="#D00000">KS</text>
+</svg>

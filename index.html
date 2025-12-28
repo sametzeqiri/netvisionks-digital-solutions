@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NetvisionKs | Digital Innovation & Outsourcing</title>
+  <meta name="description"
+    content="NetvisionKs erbjuder skräddarsydd webbutveckling, apputveckling och strategisk HR-outsourcing. Vi kopplar nordiska företag med topptalanger från Kosovo." />
+
+  <!-- Preload Critical Hero Image - Responsive LCP (Strict Media Queries) -->
+  <link rel="preload" as="image" href="/hero-bg-1-mobile.jpg" media="(max-width: 768px)" fetchpriority="high">
+  <link rel="preload" as="image" href="/hero-bg-1.webp" media="(min-width: 769px)" fetchpriority="high">
+
+  <!-- Preload Critical Fonts (Local) to prevent blocking -->
+  <link rel="preload" href="/fonts/BodoniModa-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/BodoniModa-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/NunitoSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Critical Inline CSS (Performance Optimization) -->
+  <style>
+    @font-face {
+      font-family: 'Bodoni Moda';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url('/fonts/BodoniModa-Bold.woff2') format('woff2');
+    }
+
+    @font-face {
+      font-family: 'Nunito Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('/fonts/NunitoSans-Regular.woff2') format('woff2');
+    }
+
+    :root {
+      --primary: #FF6600;
+      --bg: #F2F0EF;
+      --dark: #111111;
+    }
+
+    html,
+    body {
+      background-color: var(--bg);
+      margin: 0;
+      padding: 0;
+      font-family: 'Nunito Sans', sans-serif;
+      overflow-x: hidden;
+      color: var(--dark);
+    }
+
+    /* Fixed Header Background for FCP */
+    header {
+      background: rgba(18, 18, 18, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 60px;
+      z-index: 1000;
+    }
+
+    /* Critical Hero Shell (Visible during load) */
+    #app-shell-hero {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: -1;
+      overflow: hidden;
+      background-color: #000;
+    }
+
+    .hero-img-lcp {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+         object-fit: cover;
+      display: block;
+    }
+
+    /* Page Loader - Transparent bg to allow LCP image detection */
+    .page-loader {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+      background-color: transparent;
+      position: relative;
+      z-index: 100;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .loader-spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(255, 102, 0, 0.1);
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: rotate 1s linear infinite;
+    }
+  </style>
+
+  <!-- Defer Non-Critical CSS -->
+  <noscript>
+  </noscript>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="NetvisionKs | Digital Innovation & Outsourcing" />
+  <meta property="og:description"
+    content="Vi hjälper företag att växa genom strategisk HR, digital marknadsföring och effektiva outsourcing-lösningar." />
+  <meta property="og:image" content="/bujar.webp" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="NetvisionKs | Digital Innovation & Outsourcing" />
+  <meta property="twitter:description"
+    content="Vi hjälper företag att växa genom strategisk HR, digital marknadsföring och effektiva outsourcing-lösningar." />
+  <meta property="twitter:image" content="/bujar.webp" />
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <script type="module" crossorigin src="/assets/index-ClCrxigg.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CVueG3fQ.css">
+</head>
+
+<body>
+  <div id="app-shell-hero">
+    <!-- Simplified LCP Image - High Priority -->
+    <img src="/hero-bg-1-mobile.jpg" alt="NetvisionKs" class="hero-img-lcp" fetchpriority="high" loading="eager"
+      decoding="async">
+    <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);"></div>
+  </div>
+
+  <div id="root">
+    <!-- Initial Loading State to prevent blank screen (CLS/FCP) -->
+    <div class="page-loader">
+      <div class="loader-spinner"></div>
+    </div>
+  </div>
+</body>
+
+</html>
