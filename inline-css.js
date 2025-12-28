@@ -15,14 +15,15 @@ async function inlineCss() {
     let html = fs.readFileSync(HTML_PATH, 'utf-8');
 
     // Regex to find the main CSS link injected by Vite
-    // Typically: <link rel="stylesheet" crossorigin href="/assets/index-HASH.css">
-    const cssLinkRegex = /<link[^>]+rel="stylesheet"[^>]+href="(\/assets\/index-[^"]+\.css)"[^>]*>|<link[^>]+href="(\/assets\/index-[^"]+\.css)"[^>]+rel="stylesheet"[^>]*>/;
+    // Matches <link rel="stylesheet" href="..."> or <link href="..." rel="stylesheet">
+    // Allows for ./assets, /assets, or just assets/
+    const cssLinkRegex = /<link[^>]+href="\.?(\/?assets\/index-[^"]+\.css)"[^>]*>|<link[^>]+href="\.?(\/?assets\/index-[^"]+\.css)"[^>]+rel="stylesheet"[^>]*>|<link[^>]+rel="stylesheet"[^>]+href="\.?(\/?assets\/index-[^"]+\.css)"[^>]*>/;
 
     const match = html.match(cssLinkRegex);
 
     if (match) {
         // match[1] or match[2] will contain the path
-        const cssHref = match[1] || match[2];
+        const cssHref = match[1] || match[2] || match[3]; // Updated to account for the new regex groups
 
         // Remove leading slash for path check
         const relativeCssPath = cssHref.startsWith('/') ? cssHref.substring(1) : cssHref;
