@@ -72,8 +72,8 @@ const Navbar: React.FC = () => {
       ? 'bg-white/60 backdrop-blur-xl border-b border-white/30 shadow-[0_4px_30px_rgba(0,0,0,0.03)]'
       : 'bg-transparent'
       }`}>
-      {/* Top Bar - Orange Background matching image */}
-      <div className={`hidden lg:block overflow-hidden transition-all duration-300 h-10 opacity-100 py-2 bg-primary text-white text-sm font-medium`}>
+      {/* Top Bar - Darker Orange for Accessibility (Contrast > 4.5:1) */}
+      <div className={`hidden lg:block overflow-hidden transition-all duration-300 h-10 opacity-100 py-2 bg-[#CC5200] text-white text-sm font-medium`}>
         <div className="container mx-auto px-4 lg:px-12 flex justify-between items-center h-full font-sans">
           <div className="flex items-center space-x-6">
             <span className="flex items-center gap-2"><MapPin size={14} className="text-white" /> Sveavägen 1, Stockholm</span>

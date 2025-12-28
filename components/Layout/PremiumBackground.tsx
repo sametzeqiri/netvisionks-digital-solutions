@@ -26,6 +26,7 @@ const VideoBackground = () => {
                     loop
                     muted
                     playsInline
+                    preload="none"
                     poster="/original-upload.webp"
                     className="w-full h-full object-cover"
                     title="Atmospheric background video"
@@ -40,6 +41,8 @@ const VideoBackground = () => {
                     fetchPriority="high"
                     loading="eager"
                     decoding="async"
+                    width="1920"
+                    height="1080"
                 />
             )}
             <div className="absolute inset-0 bg-[#F2F0EF]/80 mix-blend-overlay"></div>
