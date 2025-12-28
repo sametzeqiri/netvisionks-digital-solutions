@@ -266,7 +266,7 @@ const AIChatWidget: React.FC = () => {
                         initial={{ opacity: 0, scale: 0.8, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.8, y: 20 }}
-                        className="fixed bottom-24 right-4 md:right-8 w-[90vw] md:w-[380px] h-[500px] bg-white/80 backdrop-blur-xl border border-white/50 rounded-2xl shadow-2xl z-50 overflow-hidden flex flex-col font-sans"
+                        className="fixed bottom-24 right-4 md:right-8 w-[90vw] md:w-[380px] h-[500px] bg-white/80 backdrop-blur-xl border border-white/50 rounded-2xl shadow-2xl z-[9999] overflow-hidden flex flex-col font-sans"
                     >
                         <div className="bg-gradient-to-r from-orange-600 to-red-600 p-4 flex justify-between items-center text-white">
                             <div className="flex items-center gap-3">
@@ -356,7 +356,7 @@ const AIChatWidget: React.FC = () => {
 
             <motion.button
                 onClick={() => setIsOpen(!isOpen)}
-                className="fixed bottom-32 right-6 md:bottom-8 md:right-8 z-50 bg-gradient-to-r from-orange-600 to-red-600 text-white p-4 rounded-full shadow-lg"
+                className="fixed bottom-32 right-6 md:bottom-8 md:right-8 z-[9999] bg-gradient-to-r from-orange-600 to-red-600 text-white p-4 rounded-full shadow-lg"
                 aria-label={isOpen ? "Stäng AI-chatt" : "Öppna AI-chatt"}
             >
                 {isOpen ? <X size={28} /> : <MessageSquare size={28} />}
