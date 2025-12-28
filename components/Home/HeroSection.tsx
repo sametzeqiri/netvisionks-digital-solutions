@@ -74,8 +74,9 @@ const HeroSection: React.FC = () => {
   return (
     <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
       {/* Background Slideshow */}
+      {/* Background Slideshow - Desktop Only to save TBT on Mobile */}
       <div
-        className="absolute inset-0 z-0 bg-dark-900"
+        className="hidden md:block absolute inset-0 z-0 bg-dark-900"
         style={{ clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 100px), 0 100%)' }}
       >
         <AnimatePresence mode="popLayout" initial={false}>
@@ -90,24 +91,20 @@ const HeroSection: React.FC = () => {
               scale: { duration: 7, ease: "linear" }
             }}
           >
-            <picture>
-              <source media="(max-width: 768px)" srcSet={heroImages[currentImage].mobile} />
-              <source media="(min-width: 769px)" srcSet={heroImages[currentImage].desktop} />
-              <img
-                src={heroImages[currentImage].desktop}
-                alt={heroImages[currentImage].alt}
-                className="w-full h-full object-cover"
-                fetchPriority={currentImage === 0 ? "high" : "auto"}
-                loading={currentImage === 0 ? "eager" : "lazy"}
-                decoding="async"
-                width="1920"
-                height="1080"
-              />
-            </picture>
+            <img
+              src={heroImages[currentImage].desktop}
+              alt={heroImages[currentImage].alt}
+              className="w-full h-full object-cover"
+              fetchPriority={currentImage === 0 ? "high" : "auto"}
+              loading={currentImage === 0 ? "eager" : "lazy"}
+              decoding="async"
+              width="1920"
+              height="1080"
+            />
           </motion.div>
         </AnimatePresence>
 
-        {/* Dark overlay - Adjusted to 50% */}
+        {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/50 z-10"></div>
       </div>
 
