@@ -5,7 +5,7 @@ import { useLanguage } from '../../contexts/LanguageContext';
 
 const heroImages = [
   {
-    mobile: "/hero-bg-1-mobile.jpg",
+    mobile: "/hero-bg-1-mobile.webp",
     desktop: "/hero-bg-1.webp",
     alt: "Företagsutveckling och strategi"
   },
