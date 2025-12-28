@@ -35,7 +35,7 @@ const VideoBackground = () => {
             ) : (
                 <div
                     className="w-full h-full bg-cover bg-center"
-                    style={{ backgroundImage: "url('/original-upload.webp')" }}
+                    style={{ backgroundImage: "url('/hero-bg-1-mobile.webp')" }}
                 />
             )}
             <div className="absolute inset-0 bg-[#F2F0EF]/80 mix-blend-overlay"></div>
