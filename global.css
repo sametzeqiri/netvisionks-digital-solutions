@@ -64,13 +64,21 @@ html {
     scroll-behavior: smooth;
     background-color: #F2F0EF;
     overflow-x: hidden;
-    /* Removed overscroll-behavior-y to fix scroll issues */
+    overscroll-behavior-y: none;
+    /* Stops "scroll past footer" aka rubber banding */
 }
 
 body {
     overflow-x: hidden;
     position: relative;
-    /* Ensure proper stacking */
+    overscroll-behavior-y: none;
+    min-height: 100vh;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Clearer Text Global Enhancement */
