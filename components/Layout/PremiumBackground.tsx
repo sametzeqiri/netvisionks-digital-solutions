@@ -33,9 +33,13 @@ const VideoBackground = () => {
                     <source src="/D_Video_UI_Animation_Generated.mp4" type="video/mp4" />
                 </video>
             ) : (
-                <div
-                    className="w-full h-full bg-cover bg-center"
-                    style={{ backgroundImage: "url('/hero-bg-1-mobile.webp')" }}
+                <img
+                    src="/hero-bg-1-mobile.webp"
+                    alt="Background"
+                    className="w-full h-full object-cover"
+                    fetchPriority="high"
+                    loading="eager"
+                    decoding="async"
                 />
             )}
             <div className="absolute inset-0 bg-[#F2F0EF]/80 mix-blend-overlay"></div>
