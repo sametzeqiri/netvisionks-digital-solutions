@@ -64,14 +64,13 @@ html {
     scroll-behavior: smooth;
     background-color: #F2F0EF;
     overflow-x: hidden;
-    overscroll-behavior-y: none;
-    /* Prevents "elastic" bounce past footer */
-    /* Prevent horizontal scroll */
+    /* Removed overscroll-behavior-y to fix scroll issues */
 }
 
 body {
     overflow-x: hidden;
-    /* Double safety */
+    position: relative;
+    /* Ensure proper stacking */
 }
 
 /* Clearer Text Global Enhancement */

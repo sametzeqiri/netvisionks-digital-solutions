@@ -111,7 +111,7 @@ export const PremiumBackground: React.FC<{ children: React.ReactNode, className?
     }, []);
 
     return (
-        <div className={`relative w-full min-h-screen overflow-x-hidden bg-[#F2F0EF] ${className}`}>
+        <div className={`relative w-full min-h-[100dvh] overflow-x-hidden bg-[#F2F0EF] ${className}`}>
             <VideoBackground />
 
             {!isMobile && <DesktopScene />}

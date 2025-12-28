@@ -9,8 +9,10 @@
     content="NetvisionKs erbjuder skräddarsydd webbutveckling, apputveckling och strategisk HR-outsourcing. Vi kopplar nordiska företag med topptalanger från Kosovo." />
 
   <!-- Preload Critical Hero Image - Responsive LCP (Strict Media Queries) -->
-  <link rel="preload" as="image" href="/hero-bg-1-mobile.webp" media="(max-width: 768px)" fetchpriority="high" type="image/webp">
-  <link rel="preload" as="image" href="/hero-bg-1.webp" media="(min-width: 769px)" fetchpriority="high" type="image/webp">
+  <link rel="preload" as="image" href="/hero-bg-1-mobile.webp" media="(max-width: 768px)" fetchpriority="high"
+    type="image/webp">
+  <link rel="preload" as="image" href="/hero-bg-1.webp" media="(min-width: 769px)" fetchpriority="high"
+    type="image/webp">
 
   <!-- Preload Critical Fonts (Local) to prevent blocking -->
   <link rel="preload" href="/fonts/BodoniModa-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
@@ -18,99 +20,19 @@
   <link rel="preload" href="/fonts/NunitoSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Critical Inline CSS (Performance Optimization) -->
+  <!-- Critical Inline CSS (Performance Optimization) - Handled by build script inline-css.js -->
   <style>
-    @font-face {
-      font-family: 'Bodoni Moda';
-      font-style: normal;
-      font-weight: 700;
-      font-display: swap;
-      src: url('/fonts/BodoniModa-Bold.woff2') format('woff2');
-    }
-
-    @font-face {
-      font-family: 'Nunito Sans';
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url('/fonts/NunitoSans-Regular.woff2') format('woff2');
-    }
-
-    :root {
-      --primary: #FF6600;
-      --bg: #F2F0EF;
-      --dark: #111111;
-    }
-
-    html,
+    /* Minimal shell styles to prevent FOUC before build script injections */
     body {
-      background-color: var(--bg);
+      background-color: #F2F0EF;
       margin: 0;
-      padding: 0;
-      font-family: 'Nunito Sans', sans-serif;
-      overflow-x: hidden;
-      color: var(--dark);
     }
 
-    /* Fixed Header Background for FCP */
-    header {
-      background: rgba(18, 18, 18, 0.85);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 60px;
-      z-index: 1000;
-    }
-
-    /* Critical Hero Shell (Visible during load) */
     #app-shell-hero {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
+      inset: 0;
       z-index: -1;
-      overflow: hidden;
-      background-color: #000;
-    }
-
-    .hero-img-lcp {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* Page Loader - Transparent bg to allow LCP image detection */
-    .page-loader {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      width: 100%;
-      background-color: transparent;
-      position: relative;
-      z-index: 100;
-    }
-
-    @keyframes rotate {
-      from {
-        transform: rotate(0deg);
-      }
-
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .loader-spinner {
-      width: 40px;
-      height: 40px;
-      border: 4px solid rgba(255, 102, 0, 0.1);
-      border-top-color: var(--primary);
-      border-radius: 50%;
-      animation: rotate 1s linear infinite;
+      background: #000;
     }
   </style>
 

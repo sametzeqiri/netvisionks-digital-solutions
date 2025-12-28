@@ -7,7 +7,6 @@ import { PremiumBackground } from './components/Layout/PremiumBackground';
 const AIChatWidget = lazy(() => import('./components/Cards/AIChatWidget'));
 const CookieConsent = lazy(() => import('./components/Layout/CookieConsent'));
 const Footer = lazy(() => import('./components/Layout/Footer'));
-const ScrollToTop = lazy(() => import('./components/Layout/ScrollToTop'));
 
 // Lazy load pages for better performance
 const Home = lazy(() => import('./pages/Home'));
@@ -47,7 +46,7 @@ const App: React.FC = () => {
       <Router>
         <ScrollToTopOnNavigate />
         <PremiumBackground>
-          <div className="flex flex-col min-h-screen font-sans bg-transparent">
+          <div className="flex flex-col min-h-[100dvh] font-sans bg-transparent">
             <Navbar />
             <div className="flex-grow">
               <Suspense fallback={<PageLoader />}>
@@ -68,12 +67,14 @@ const App: React.FC = () => {
                   <Route path="/contact/careers" element={<CareersPage />} />
                   <Route path="/careers/job/:id" element={<JobDetailPage />} />
                 </Routes>
-                <Footer />
-                <ScrollToTop />
-                <DelayedChat />
-                <CookieConsent />
               </Suspense>
             </div>
+            <Suspense fallback={null}>
+              <Footer />
+
+              <DelayedChat />
+              <CookieConsent />
+            </Suspense>
           </div>
         </PremiumBackground>
       </Router>

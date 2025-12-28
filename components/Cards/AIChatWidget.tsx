@@ -356,7 +356,7 @@ const AIChatWidget: React.FC = () => {
 
             <motion.button
                 onClick={() => setIsOpen(!isOpen)}
-                className="fixed bottom-32 right-6 md:bottom-8 md:right-8 z-50 bg-gradient-to-r from-orange-600 to-red-600 text-white p-4 rounded-full shadow-lg"
+                className="hidden md:flex fixed bottom-32 right-6 md:bottom-8 md:right-8 z-50 bg-gradient-to-r from-orange-600 to-red-600 text-white p-4 rounded-full shadow-lg"
                 aria-label={isOpen ? "Stäng AI-chatt" : "Öppna AI-chatt"}
             >
                 {isOpen ? <X size={28} /> : <MessageSquare size={28} />}
