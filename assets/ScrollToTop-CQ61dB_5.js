@@ -1,6 +1,0 @@
-import{c as i,r,j as e,A as l,m as n}from"./index-ClCrxigg.js";/**
- * @license lucide-react v0.555.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */const c=[["path",{d:"m5 12 7-7 7 7",key:"hav0vg"}],["path",{d:"M12 19V5",key:"x0mq9r"}]],d=i("arrow-up",c),h=()=>{const[s,t]=r.useState(!1),o=()=>{window.pageYOffset>300?t(!0):t(!1)},a=()=>{window.scrollTo({top:0,behavior:"smooth"})};return r.useEffect(()=>(window.addEventListener("scroll",o),()=>{window.removeEventListener("scroll",o)}),[]),e.jsx(l,{children:s&&e.jsx(n.button,{initial:{opacity:0,scale:.5},animate:{opacity:1,scale:1},exit:{opacity:0,scale:.5},onClick:a,className:"fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full backdrop-blur-xl bg-gray-800/90 border border-white/30 text-white flex items-center justify-center transition-all duration-300 group shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_0_25px_rgba(100,100,100,0.6)] hover:bg-gray-700 hover:scale-110 hover:border-white","aria-label":"Scroll to top",children:e.jsx(d,{size:24,strokeWidth:2,className:"text-accent group-hover:-translate-y-1 transition-transform duration-300"})})})};export{h as default};
