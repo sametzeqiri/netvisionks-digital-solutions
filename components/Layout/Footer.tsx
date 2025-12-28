@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
             <Briefcase className="text-primary" size={28} />
             <span className="tracking-wider uppercase">Netvision<span className="text-accent">Ks</span></span>
           </div>
-          <p className="mb-6 leading-relaxed max-w-sm text-gray-300 font-medium font-sans">
+          <p className="mb-6 leading-relaxed max-w-sm text-gray-200 font-medium font-sans">
             {t('footer.desc')}
           </p>
           <div className="flex space-x-4">
@@ -79,28 +79,28 @@ const Footer: React.FC = () => {
               <div className="text-primary mt-1 group-hover:scale-110 transition-transform">📍</div>
               <div>
                 <h4 className="text-white font-medium group-hover:text-accent transition-colors font-serif tracking-wide uppercase">{t('footer.address')}</h4>
-                <p className="text-gray-300">Sveavägen 1, 111 57<br />Stockholm, Sverige</p>
+                <p className="text-gray-200">Sveavägen 1, 111 57<br />Stockholm, Sverige</p>
               </div>
             </div>
             <div className="flex gap-4 group">
               <div className="text-primary mt-1 group-hover:scale-110 transition-transform">📞</div>
               <div>
                 <h4 className="text-white font-medium group-hover:text-accent transition-colors font-serif tracking-wide uppercase">{t('footer.phone')}</h4>
-                <p className="text-gray-300">08-123 45 67</p>
+                <p className="text-gray-200">08-123 45 67</p>
               </div>
             </div>
             <div className="flex gap-4 group">
               <div className="text-primary mt-1 group-hover:scale-110 transition-transform">✉️</div>
               <div>
                 <h4 className="text-white font-medium group-hover:text-accent transition-colors font-serif tracking-wide uppercase">{t('footer.email')}</h4>
-                <a href="mailto:info@netvisionks.com" className="text-gray-300 hover:text-primary transition-colors">info@netvisionks.com</a>
+                <a href="mailto:info@netvisionks.com" className="text-gray-200 hover:text-primary transition-colors">info@netvisionks.com</a>
               </div>
             </div>
             <div className="flex gap-4 group">
               <div className="text-primary mt-1 group-hover:scale-110 transition-transform"><Clock size={18} /></div>
               <div>
                 <h4 className="text-white font-medium group-hover:text-accent transition-colors font-serif tracking-wide uppercase">{t('footer.hours')}</h4>
-                <p className="text-gray-300">{t('footer.hours_text')}</p>
+                <p className="text-gray-200">{t('footer.hours_text')}</p>
               </div>
             </div>
           </div>
@@ -113,7 +113,7 @@ const Footer: React.FC = () => {
         transition={{ delay: 1 }}
         className="border-t border-white/5 pt-8 text-center"
       >
-        <p className="text-gray-400 text-sm">&copy; {new Date().getFullYear()} NetvisionKs. {t('footer.rights')}</p>
+        <p className="text-gray-300 text-sm">&copy; {new Date().getFullYear()} NetvisionKs. {t('footer.rights')}</p>
       </motion.div>
     </footer>
   );

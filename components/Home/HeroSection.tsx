@@ -146,7 +146,7 @@ const HeroSection: React.FC = () => {
           <div className="flex flex-col gap-6 justify-center mt-4 w-full px-4">
             <Link to="/contact" className="w-full">
               <button
-                className="w-full px-10 py-4 bg-primary text-white font-bold rounded text-lg uppercase tracking-wider shadow-xl border border-primary/20"
+                className="w-full px-10 py-4 bg-primary text-black font-bold rounded text-lg uppercase tracking-wider shadow-xl border border-primary/20"
                 aria-label={t('hero.btn_quote')}
               >
                 {t('hero.btn_quote')}

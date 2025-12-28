@@ -209,8 +209,8 @@ textarea {
     /* Semi-transparent Orange */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    color: white;
-    /* Ensure text is white and visible */
+    color: #000000;
+    /* Ensure text is black for contrast */
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 4px 15px rgba(255, 102, 0, 0.2);
     transition: all 0.3s ease;
@@ -237,7 +237,7 @@ textarea {
     /* The GLOW */
     transform: translateY(-2px);
     border-color: rgba(255, 255, 255, 0.6);
-    color: white;
+    color: #000000;
 }
 
 /* Transparent Glass Beam Button (Like primary but transparent) */
