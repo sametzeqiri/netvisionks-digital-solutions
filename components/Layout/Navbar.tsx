@@ -77,7 +77,7 @@ const Navbar: React.FC = () => {
         <div className="container mx-auto px-4 lg:px-12 flex justify-between items-center h-full font-sans">
           <div className="flex items-center space-x-6">
             <span className="flex items-center gap-2"><MapPin size={14} className="text-white" /> Sveavägen 1, Stockholm</span>
-            <a href="tel:08-1234567" className="flex items-center gap-2 hover:text-gray-200 transition-colors"><Phone size={14} className="text-white" /> 08-123 45 67</a>
+            <a href="tel:08-1234567" className="flex items-center gap-2 hover:text-gray-200 transition-colors"><Phone size={14} className="text-white" /> +47 477 38 137</a>
             <a href="mailto:info@netvisionks.com" className="flex items-center gap-2 hover:text-gray-200 transition-colors"><Mail size={14} className="text-white" /> info@netvisionks.com</a>
           </div>
           <div className="flex items-center gap-2">

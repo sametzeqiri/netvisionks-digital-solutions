@@ -161,7 +161,7 @@ const AIChatWidget: React.FC = () => {
     const generateResponse = (input: string) => {
         const low = input.toLowerCase();
         if (low.includes('pris') || low.includes('kostnad') || low.includes('offert')) return "Våra priser är skräddarsydda efter varje projekts behov. För outsourcing erbjuder vi ofta lösningar som är 30-50% mer kostnadseffektiva än lokala alternativ. Vill du ha en offert? [Kontakta oss via formuläret](/contact)!";
-        if (low.includes('kontakt') || low.includes('mail') || low.includes('telefon')) return "Du kan nå oss via:\n📧 info@netvisionks.com\n📞 08-123 45 67\n📍 [Hitta oss på Sveavägen 1, Stockholm](/contact)";
+        if (low.includes('kontakt') || low.includes('mail') || low.includes('telefon')) return "Du kan nå oss via:\n📧 info@netvisionks.com\n📞 +47 477 38 137 eller +383 49 808 113\n📍 [Hitta oss på Sveavägen 1, Stockholm](/contact)";
         if (low.includes('jobb') || low.includes('karriär') || low.includes('rekrytering')) return "Vi söker alltid efter nya talanger! Just nu letar vi efter Senior React Developers och .NET experter. Kolla in vår [Karriär-sida](/contact) för mer info.";
         if (low.includes('tjänster') || low.includes('erbjuder')) return "Vi specialiserar oss på:\n✅ Staff Augmentation\n✅ Skräddarsydd Utveckling\n✅ Molnlösningar\n✅ Apputveckling";
         if (low.includes('hej') || low.includes('tja')) return "Hej där! Kul att du tittar förbi. Vad kan jag hjälpa till med?";

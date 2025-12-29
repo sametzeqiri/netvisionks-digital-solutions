@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
               <div className="text-primary mt-1 group-hover:scale-110 transition-transform">📞</div>
               <div>
                 <h4 className="text-white font-medium group-hover:text-accent transition-colors font-serif tracking-wide uppercase">{t('footer.phone')}</h4>
-                <p className="text-gray-200">08-123 45 67</p>
+                <p className="text-gray-200">+47 477 38 137<br />+383 49 808 113</p>
               </div>
             </div>
             <div className="flex gap-4 group">
