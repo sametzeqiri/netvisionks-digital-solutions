@@ -14,8 +14,5 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
 
-      - name: Build Only for Verification ✅
-        run: |
-          npm install
-          npm run build
-          echo "Build successful. Deployment disabled per user request."
+      - name: Trigger Hostinger Auto-Deploy 🔄
+        run: curl -X POST https://webhooks.hostinger.com/deploy/ed11e23db3de9daaa87160b575d204ca
