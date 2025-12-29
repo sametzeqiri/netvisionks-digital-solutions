@@ -65,11 +65,14 @@ html {
     background-color: #F2F0EF;
     overflow-x: hidden;
     max-width: 100%;
+    overscroll-behavior-y: none;
+    /* Stops "scroll past footer" aka rubber banding */
 }
 
 body {
     overflow-x: hidden;
     position: relative;
+    overscroll-behavior-y: none;
     min-height: 100dvh;
     max-width: 100%;
     margin: 0;

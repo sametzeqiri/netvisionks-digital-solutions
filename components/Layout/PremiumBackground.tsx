@@ -118,7 +118,7 @@ export const PremiumBackground: React.FC<{ children: React.ReactNode, className?
     }, []);
 
     return (
-        <div className={`relative w-full min-h-[100dvh] overflow-x-hidden bg-[#F2F0EF] ${className}`}>
+        <div className={`relative w-full min-h-[100dvh] flex flex-col overflow-x-hidden bg-[#F2F0EF] ${className}`}>
             <VideoBackground />
 
             {!isMobile && <DesktopScene />}
@@ -140,7 +140,7 @@ export const PremiumBackground: React.FC<{ children: React.ReactNode, className?
                 }}
             />
 
-            <div className="relative z-50 flex flex-col min-h-[100dvh]">
+            <div className="relative z-50 flex-grow flex flex-col w-full">
                 {children}
             </div>
         </div>
