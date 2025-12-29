@@ -48,7 +48,7 @@ const App: React.FC = () => {
         <PremiumBackground>
           <div className="flex flex-col min-h-[100dvh] font-sans bg-transparent">
             <Navbar />
-            <main className="flex-grow flex flex-col">
+            <div className="flex-grow">
               <Suspense fallback={<PageLoader />}>
                 <Routes>
                   <Route path="/" element={<Home />} />
@@ -68,7 +68,7 @@ const App: React.FC = () => {
                   <Route path="/careers/job/:id" element={<JobDetailPage />} />
                 </Routes>
               </Suspense>
-            </main>
+            </div>
             <Suspense fallback={null}>
               <Footer />
 

@@ -282,12 +282,28 @@ const Navbar: React.FC = () => {
                   )}
                 </div>
               ))}
-              <div className="pt-4">
+              <div className="pt-4 flex flex-col gap-4">
                 <Link to="/contact" onClick={() => setIsOpen(false)}>
                   <button className="w-full btn-primary-glass py-4 rounded-md font-bold tracking-widest font-sans">
                     {t('nav.request_quote')}
                   </button>
                 </Link>
+
+                {/* Mobile Contact Info */}
+                <div className="flex flex-col gap-3 py-4 border-t border-gray-100 mt-2">
+                  <div className="flex items-center gap-3 text-dark-900">
+                    <MapPin size={18} className="text-primary" />
+                    <span className="text-sm font-medium">Zekë Bathiri 30, Vushtrri</span>
+                  </div>
+                  <a href="tel:+4747738137" className="flex items-center gap-3 text-dark-900 hover:text-primary transition-colors">
+                    <Phone size={18} className="text-primary" />
+                    <span className="text-sm font-medium">+47 477 38 137 / +383 49 808 113</span>
+                  </a>
+                  <a href="mailto:info@netvisionks.com" className="flex items-center gap-3 text-dark-900 hover:text-primary transition-colors">
+                    <Mail size={18} className="text-primary" />
+                    <span className="text-sm font-medium">info@netvisionks.com</span>
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>
