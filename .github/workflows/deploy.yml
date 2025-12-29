@@ -14,5 +14,11 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
 
+      - name: Deploy to Branch 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: hostinger-deploy
+          folder: dist
+
       - name: Trigger Hostinger Auto-Deploy 🔄
         run: curl -X POST https://webhooks.hostinger.com/deploy/ed11e23db3de9daaa87160b575d204ca
