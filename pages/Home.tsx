@@ -25,7 +25,7 @@ const Home: React.FC = () => {
           "logo": "https://netvisionks.com/logo-transparent-v5.webp",
           "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": "+46-8-123-45-67",
+            "telephone": "+47 477 38 137",
             "contactType": "customer service",
             "email": "info@netvisionks.com"
           },

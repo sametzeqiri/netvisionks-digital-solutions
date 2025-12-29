@@ -146,7 +146,7 @@ const ServiceDetail: React.FC = () => {
                             </Link>
                             <div className="mt-8 pt-8 border-t border-white/10 text-center">
                                 <p className="text-sm text-gray-400 mb-2">Eller ring oss direkt:</p>
-                                <a href="tel:081234567" className="text-xl font-bold hover:text-primary transition-colors">08-123 45 67</a>
+                                <a href="tel:+4747738137" className="text-xl font-bold hover:text-primary transition-colors">+47 477 38 137 / +383 49 808 113</a>
                             </div>
                         </div>
                     </div>

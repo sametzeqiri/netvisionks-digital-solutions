@@ -92,7 +92,7 @@ const ContactPage: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg text-dark-900 tracking-wide uppercase font-serif">{t('contact.call')}</h3>
-                  <a href="tel:08-1234567" className="text-gray-500 font-light font-sans hover:text-primary transition-colors">08-123 45 67</a>
+                  <a href="tel:+4747738137" className="text-gray-500 font-light font-sans hover:text-primary transition-colors">+47 477 38 137 / +383 49 808 113</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
