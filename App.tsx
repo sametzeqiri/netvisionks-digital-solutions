@@ -45,37 +45,35 @@ const App: React.FC = () => {
     <LanguageProvider>
       <Router>
         <ScrollToTopOnNavigate />
-        <PremiumBackground>
-          <div className="flex flex-col min-h-[100dvh] font-sans bg-transparent">
-            <Navbar />
-            <div className="flex-grow">
-              <Suspense fallback={<PageLoader />}>
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/services" element={<ServicesPage />} />
-                  <Route path="/services/:id" element={<ServiceDetail />} />
-                  <Route path="/contact" element={<ContactPage />} />
-                  <Route path="/about" element={<AboutPage />} />
-                  <Route path="/sandbox" element={<Sandbox />} />
+        <PremiumBackground className="font-sans">
+          <Navbar />
+          <main className="flex-grow flex flex-col">
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/services" element={<ServicesPage />} />
+                <Route path="/services/:id" element={<ServiceDetail />} />
+                <Route path="/contact" element={<ContactPage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/sandbox" element={<Sandbox />} />
 
-                  {/* Placeholder routes for demo purposes */}
-                  <Route path="/news" element={<Home />} />
-                  <Route path="/news/blog" element={<BlogPage />} />
-                  <Route path="/news/blog/:id" element={<BlogDetailPage />} />
-                  <Route path="/about/value/:id" element={<ValueDetailPage />} />
-                  <Route path="/news/faq" element={<FAQPage />} />
-                  <Route path="/contact/careers" element={<CareersPage />} />
-                  <Route path="/careers/job/:id" element={<JobDetailPage />} />
-                </Routes>
-              </Suspense>
-            </div>
-            <Suspense fallback={null}>
-              <Footer />
-
-              <AIChatWidget />
-              <CookieConsent />
+                {/* Placeholder routes for demo purposes */}
+                <Route path="/news" element={<Home />} />
+                <Route path="/news/blog" element={<BlogPage />} />
+                <Route path="/news/blog/:id" element={<BlogDetailPage />} />
+                <Route path="/about/value/:id" element={<ValueDetailPage />} />
+                <Route path="/news/faq" element={<FAQPage />} />
+                <Route path="/contact/careers" element={<CareersPage />} />
+                <Route path="/careers/job/:id" element={<JobDetailPage />} />
+              </Routes>
             </Suspense>
-          </div>
+          </main>
+          <Suspense fallback={null}>
+            <Footer />
+
+            <AIChatWidget />
+            <CookieConsent />
+          </Suspense>
         </PremiumBackground>
       </Router>
     </LanguageProvider>
