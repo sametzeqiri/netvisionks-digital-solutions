@@ -76,7 +76,7 @@ const Navbar: React.FC = () => {
       <div className={`hidden lg:block overflow-hidden transition-all duration-300 h-10 opacity-100 py-2 bg-[#CC5200] text-white text-sm font-medium`}>
         <div className="container mx-auto px-4 lg:px-12 flex justify-between items-center h-full font-sans">
           <div className="flex items-center space-x-6">
-            <span className="flex items-center gap-2"><MapPin size={14} className="text-white" /> Sveavägen 1, Stockholm</span>
+            <span className="flex items-center gap-2"><MapPin size={14} className="text-white" /> Zekë Bathiri 30, Vushtrri</span>
             <a href="tel:+4747738137" className="flex items-center gap-2 hover:text-gray-200 transition-colors"><Phone size={14} className="text-white" /> +47 477 38 137 / +383 49 808 113</a>
             <a href="mailto:info@netvisionks.com" className="flex items-center gap-2 hover:text-gray-200 transition-colors"><Mail size={14} className="text-white" /> info@netvisionks.com</a>
           </div>

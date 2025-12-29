@@ -83,7 +83,7 @@ const ContactPage: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg text-dark-900 tracking-wide uppercase font-serif">{t('contact.visit')}</h3>
-                  <p className="text-gray-500 font-light font-sans">Sveavägen 1, 111 57 Stockholm</p>
+                  <p className="text-gray-500 font-light font-sans">Zekë Bathiri 30, 42000 Vushtrri</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -226,7 +226,7 @@ const ContactPage: React.FC = () => {
           loading="lazy"
           allowFullScreen
           referrerPolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2034.783963496035!2d18.0602656768856!3d59.33475967459635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d6061386765%3A0x6266e7d69282531!2sSveav%C3%A4gen%201%2C%20111%2057%20Stockholm!5e0!3m2!1sv!2sse!4v1715690000000!5m2!1sv!2sse">
+          src="https://maps.google.com/maps?q=42.782861,20.952889&z=15&output=embed">
         </iframe>
       </div>
     </div>

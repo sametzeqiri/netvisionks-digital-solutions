@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
               <div className="text-primary mt-1 group-hover:scale-110 transition-transform">📍</div>
               <div>
                 <h4 className="text-white font-medium group-hover:text-accent transition-colors font-serif tracking-wide uppercase">{t('footer.address')}</h4>
-                <p className="text-gray-200">Sveavägen 1, 111 57<br />Stockholm, Sverige</p>
+                <p className="text-gray-200">Zekë Bathiri 30, 42000<br />Vushtrri, Kosovo</p>
               </div>
             </div>
             <div className="flex gap-4 group">
